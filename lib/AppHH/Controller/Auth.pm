@@ -5,7 +5,7 @@ has client_id				=> 'K172TB7M5RTLQBTUMISDUI9VASC3TQK38L567CUIB7ULN2CRD0LC00HCGPF
 has secret_key				=> 'K1732BK1GP33A05UBEGVA930DNP0RQ1AFI3CA3R0HFV6J5B5H2SVAB7J1P8I3LAM';
 has authorize_url			=> 'https://hh.ru/oauth/authorize';
 has access_token_url			=> 'https://hh.ru/oauth/token';
-has redirect_uri			=> 'http://localhost:3000/auth/';
+has redirect_uri			=> 'http://localhost:3009/auth/';
 
 sub login {
 	my $self = shift;

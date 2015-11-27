@@ -1,5 +1,6 @@
 package AppHH::Hh_api;
 use warnings;
+use feature qw( switch say );
 
 my $ua = Mojo::UserAgent->new;
 
@@ -15,15 +16,16 @@ sub get_vacancies {
 
 sub get_vacancy {
 	my ( $class, $self, $id, $header ) = @_;
-	my $url = $class->make_url("vacancies/$id");
+	my $url = $self->make_url("vacancies/$id");
 	my $res = $ua->get( $url => $header )->res->json;
 	return $res;
 }
 
 sub get_negotiations {
-	my ( $class, $self, $id, $header ) = @_;
-	my $url = $class->make_url( 'negotiations', { vacancy_id => $id } );
-	my $res = $ua->get( $url => $header )->res->json;
+	my ( $class, $self, $type, $id, $header ) = @_;
+	my $url = $self->make_url( "negotiations/$type", { vacancy_id => $id });
+	my $res = $ua->get( $url => $header )->res->json->{items};
+	say $url;
 	return $res;
 }
 
