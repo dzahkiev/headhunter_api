@@ -24,6 +24,7 @@ sub create_table {
 				unread_responses int(10),
 				views int(10),
 				invitations int(10),
+				status varchar(32),
 				primary key (id)
 		)"
 	);
@@ -39,15 +40,16 @@ sub create_table {
 				age int(3),
 				resume_title varchar(512),
 				resume_url varchar(512),
+				status varchar(32),
 				primary key (id)
 		)"
 	);
 }
 
 sub insert_vacancies {
-	my ( $class, $vacancies ) = @_;
-	my $sth = $dbh->prepare("insert into vacancies set id = ?, name = ?, region = ?, created = ?, updated = ?, responses = ?, unread_responses = ?, views = ?, invitations = ? 
-	on duplicate key update name = values(name), region = values(region), updated = values(updated), responses = values(responses), unread_responses = values(unread_responses), views = values(views), invitations = values(invitations) ");
+	my ( $class, $type, $vacancies ) = @_;
+	my $sth = $dbh->prepare("insert into vacancies set id = ?, name = ?, region = ?, created = ?, updated = ?, responses = ?, unread_responses = ?, views = ?, invitations = ?, status = ? 
+	on duplicate key update name = values(name), region = values(region), updated = values(updated), responses = values(responses), unread_responses = values(unread_responses), views = values(views), invitations = values(invitations), status = values(status) ");
 	for my $vacancy ( @$vacancies ) {
 		my @values = (
 			$vacancy->{id},
@@ -58,7 +60,8 @@ sub insert_vacancies {
 			$vacancy->{counters}{responses},
 			$vacancy->{counters}{unread_responses},
 			$vacancy->{counters}{views},
-			$vacancy->{counters}{invitations}
+			$vacancy->{counters}{invitations},
+			$type
 		);
 		$sth->execute(@values);
 	}
@@ -66,9 +69,9 @@ sub insert_vacancies {
 }
 
 sub insert_negotiation {
-	my ( $class, $vacancy_id, $negotiations ) = @_;
-	my $sth = $dbh->prepare("insert into negotiations set id = ?, vacancy_id = ?, first_name = ?, last_name = ?, middle_name = ?, gender = ?, age = ?, resume_title = ?, resume_url = ? 
-	on duplicate key update  first_name = values(first_name), last_name = values(last_name), middle_name = values(middle_name), gender = values(gender), age = values(age), resume_title = values(resume_title), resume_url = values(resume_url) ");
+	my ( $class, $vacancy_id, $type, $negotiations ) = @_;
+	my $sth = $dbh->prepare("insert into negotiations set id = ?, vacancy_id = ?, first_name = ?, last_name = ?, middle_name = ?, gender = ?, age = ?, resume_title = ?, resume_url = ?, status = ? 
+	on duplicate key update  first_name = values(first_name), last_name = values(last_name), middle_name = values(middle_name), gender = values(gender), age = values(age), resume_title = values(resume_title), resume_url = values(resume_url), status = values(status)");
 	for my $negotiation ( @$negotiations ) {
 		my @values = (
 			$negotiation->{id},
@@ -79,10 +82,10 @@ sub insert_negotiation {
 			$negotiation->{resume}{gender}{name},
 			$negotiation->{resume}{age},
 			$negotiation->{resume}{title},
-			$negotiation->{resume}{url},
+			$negotiation->{resume}{alternate_url},
+			$type
 		);
 		$sth->execute(@values);
-		say Dumper $negotiation;
 	}
 	return;
 }
