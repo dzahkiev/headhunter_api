@@ -1,0 +1,41 @@
+% layout 'default';
+<br>
+<br>
+<h2 class="sub-header">Отклики</h2>
+          <div class="table-responsive table-bordered">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Vacancy ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Middle Name</th>
+                  <th>Responses</th>
+                  <th>Gender</th>
+                  <th>Age</th>
+                  <th>Resume Title</th>
+                  <th>Resume Url</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+
+% for my $negotiation ( @$negotiations ) {
+	<tr>
+	<td><%= $negotiation->{id} %></td>
+	<td><%= $negotiation->{vacancy_id} %></td>
+	<td><%= $negotiation->{first_name} %></td>
+	<td><%= $negotiation->{last_name} %></td>
+	<td><%= $negotiation->{middle_name} %></td>
+	<td><%= $negotiation->{responses} %></td>
+	<td><%= $negotiation->{gender} %></td>
+	<td><%= $negotiation->{age} %></td>
+	<td><%= $negotiation->{resume_title} %></td>
+  <td><%= $negotiation->{resume_url} %></td>
+	<td><%= $negotiation->{status} %></td>
+</tr>
+% } 
+</tbody>
+</table>
+</div>

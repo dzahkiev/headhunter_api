@@ -6,7 +6,7 @@ use Data::Dumper;
 my $dbh;
 
 sub db_connect {
-	my ( $class ) = shift; 
+	my $class = shift;
 	$dbh = DBI->connect( sprintf( "DBI:mysql:dbname=%s;host=%s;port=%s", @_ ) ) or die "Couldn't connect!";
 	return $dbh;
 }
@@ -45,6 +45,18 @@ sub create_table {
 		)"
 	);
 }
+
+sub select {
+	my ( $class, $query ) = @_;
+	my $sth = $dbh->prepare( $query );
+	$sth->execute;
+	my $data;
+	while ( my $ref = $sth->fetchrow_hashref ) {
+	push @$data, $ref;
+	}
+	return $data;
+}
+
 
 sub insert_vacancies {
 	my ( $class, $type, $vacancies ) = @_;

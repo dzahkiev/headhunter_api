@@ -1,0 +1,66 @@
+=head2 Mon Nov 30 14:58:38 2015: C<Module> L<common::sense|common::sense>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/dzahkievumar/projects/mojolicious/api_hh/app_hh/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.74>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Nov 30 14:58:40 2015: C<Module> L<Types::Serialiser|Types::Serialiser>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/dzahkievumar/projects/mojolicious/api_hh/app_hh/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.0>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Mon Nov 30 14:58:42 2015: C<Module> L<JSON::XS|JSON::XS>
+
+=over 4
+
+=item *
+
+C<installed into: /Users/dzahkievumar/projects/mojolicious/api_hh/app_hh/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.01>
+
+=item *
+
+C<EXE_FILES: bin/json_xs>
+
+=back
+

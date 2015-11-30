@@ -1,0 +1,39 @@
+% layout 'default';
+<br>
+<br>
+<h2 class="sub-header">Вакансии</h2>
+       <div class="table-responsive table-bordered">
+         <table class="table table-striped">
+           <thead>
+             <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Region</th>
+               <th>Created</th>
+               <th>Updated</th>
+               <th>Responses</th>
+               <th>Unread Responses</th>
+               <th>Views</th>
+               <th>Invitations</th>
+               <th>Status</th>
+             </tr>
+           </thead>
+           <tbody>
+
+% for my $vacancy ( @$vacancies ) {
+	<tr>
+	<td><%= $vacancy->{id} %></td>
+	<td><%= $vacancy->{name} %></td>
+	<td><%= $vacancy->{region} %></td>
+	<td><%= $vacancy->{created} %></td>
+	<td><%= $vacancy->{updated} %></td>
+	<td><%= $vacancy->{responses} %></td>
+	<td><%= $vacancy->{unread_responses} %></td>
+	<td><%= $vacancy->{vies} %></td>
+	<td><%= $vacancy->{invitations} %></td>
+	<td><%= $vacancy->{status} %></td>
+</tr>
+% } 
+</tbody>
+</table>
+</div>
