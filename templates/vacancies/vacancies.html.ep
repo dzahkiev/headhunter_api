@@ -1,6 +1,5 @@
 % layout 'default';
-<br>
-<br>
+<br><br>
 <h2 class="sub-header">Вакансии</h2>
        <div class="table-responsive table-bordered" style="margin-right:20px">
          <table class="table table-striped table-bordered table-hover table-condensed table-bordered">
@@ -26,11 +25,14 @@
 	<td><%= $vacancy->{region} %></td>
 	<td><%= $vacancy->{created} %></td>
 	<td><%= $vacancy->{updated} %></td>
-	<td><a href = "<%= url_for 'show_negotiations_id' %><%= $vacancy->{id} %>"><%= $vacancy->{responses} || '' %></a></td>
-	<td><a href = "<%= url_for 'show_negotiations_id' %><%= $vacancy->{id} %>?status=inbox"><%= $vacancy->{unread_responses} ||'' %></a></td>
-	<td><%= $vacancy->{vies} || '-' %></td>
+	<td><a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>" class="responses"><%= $vacancy->{responses} || '' %></a></td>
+	<td>
+    <a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>?status=inbox" class="new_responses">
+    <%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : "" %></a>
+  </td>
+	<td class="views"><%= $vacancy->{views} || '-' %></td>
 	<td><%= $vacancy->{invitations} || '-' %></td>
-	<td><%= $vacancy->{status} %></td>
+	<td class="<%= $vacancy->{status} %><%= 'd' if ($vacancy->{status} eq 'active')%>"><%= $vacancy->{status} %></td>
 </tr>
 % } 
 </tbody>

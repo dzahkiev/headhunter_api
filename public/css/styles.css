@@ -1,0 +1,26 @@
+.table th {
+  background: #D4EDF2;
+}
+.responses {
+  color: green;
+}
+.new_responses {
+  color: red;
+  font-weight: bold;
+}
+.views {
+  color: blue;
+}
+.actived {
+  background: #D9F3BE;
+}
+.hidden {
+  background: #D2D7D1;
+}
+.archived {
+  background: #F2EAD4;
+}
+.status {
+	font-style: italic;
+	font-weight: bold;
+}

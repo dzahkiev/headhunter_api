@@ -3,7 +3,9 @@
   <head>
   	<title><%= title %></title>
  	 <meta charset="utf8">
-  	<link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'></head>
+  	<link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='/css/styles.css' type='text/css' media='all'>
+  </head>
   	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">

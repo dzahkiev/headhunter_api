@@ -13,6 +13,10 @@ sub db_connect {
 	return $dbh;
 }
 
+sub db {
+	return $dbh if $dbh;
+}
+
 sub create_table {
 	my $class = shift;
 	$dbh->do("create table if not exists 
@@ -43,6 +47,7 @@ sub create_table {
 				resume_title varchar(512),
 				resume_url varchar(512),
 				status varchar(32),
+				local_status varchar(128),
 				primary key (id)
 		)"
 	);

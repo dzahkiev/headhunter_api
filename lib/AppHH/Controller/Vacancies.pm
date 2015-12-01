@@ -1,15 +1,11 @@
 package AppHH::Controller::Vacancies;
 use base 'Mojolicious::Controller';
-use feature qw( switch say );
-use Data::Dumper;
-use AppHH::DB;
 
 
 sub vacancies {
   my $self = shift;
   my $query =  "select * from vacancies";
   my $vacancies = AppHH::DB->select( $query );
-  say Dumper $vacancies;
   return $self->render( vacancies => $vacancies);
 }
 
@@ -29,6 +25,14 @@ sub negotiations {
   }
   my $negotiations = AppHH::DB->select( $query, @params );
   return $self->render( negotiations => $negotiations);
+}
+
+sub save_negotiation {
+    my $self = shift;
+    my $sth = AppHH::DB->db->prepare("update negotiations set local_status = ? where id = ?");
+    $sth->execute( $self->param('status'), $self->param('editID') );
+    my $vacancy_id = $self->param( 'ID' );
+    return $self->redirect_to("/negotiations/$vacancy_id");
 }
 
 1;

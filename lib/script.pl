@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 use strict;
-use warnings;
 use lib::AppHH::HH::Api;
 use lib::AppHH::DB;
-use feature qw( switch say );
 
 AppHH::DB->db_connect( 'test', 'localhost', '3306' );
 AppHH::DB->create_table;

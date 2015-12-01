@@ -4,12 +4,11 @@ use Mojo::Base 'Mojolicious::Controller';
 has client_id				=> 'K172TB7M5RTLQBTUMISDUI9VASC3TQK38L567CUIB7ULN2CRD0LC00HCGPF673TQ';
 has secret_key				=> 'K1732BK1GP33A05UBEGVA930DNP0RQ1AFI3CA3R0HFV6J5B5H2SVAB7J1P8I3LAM';
 has access_token_url			=> 'https://hh.ru/oauth/token';
-has redirect_uri			=> 'http://localhost:3005/auth/';
+has redirect_uri			=> 'http://localhost:3010/auth/';
 
 sub login {
 	my $self = shift;
 	return 1 if ( $self->session( 'access_token') );
-	my $res = $self->ua->post( 'http://hh.ru/logon.do' => form => { username => 'egikalegi@gmail.com', password => 'QZo9h6'} );
 	my $url = Mojo::URL->new( sprintf("https://hh.ru/oauth/authorize?response_type=code&client_id=%s&redirect_uri=%s", $self->client_id, $self->redirect_uri ) );
 	$self->redirect_to( $url );
 }
@@ -22,16 +21,16 @@ sub callback {
 		client_secret	=> $self->secret_key,
 		code		=> $self->param( 'code' ),
 		redirect_uri	=> $self->redirect_uri		})->res->json;
-	open FILE_OUTPUT, '>', 'lib/config/conf.txt';
-	print FILE_OUTPUT $access->{access_token} . "\n";
-	print FILE_OUTPUT $access->{refresh_token} . "\n";
-	close FILE_OUTPUT;
 	$self->session ({
 		access_token	=> $access->{access_token},
 		expires_in	=> $access->{expires_in},
 		refresh_token	=> $access->{refresh_token},
 		token_type	=> "\u$access->{token_type}"	});
 	$self->redirect_to('show_vacancies');
+	open	FILE, '>', 'lib/config/conf.txt';
+	print	FILE $access->{access_token} . "\n";
+	print	FILE $access->{refresh_token} . "\n";
+	close	FILE;
 }
 
 sub delete {
