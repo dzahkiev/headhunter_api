@@ -26,11 +26,11 @@ sub callback {
 		expires_in	=> $access->{expires_in},
 		refresh_token	=> $access->{refresh_token},
 		token_type	=> "\u$access->{token_type}"	});
-	$self->redirect_to('show_vacancies');
 	open	FILE, '>', 'lib/config/conf.txt';
 	print	FILE $access->{access_token} . "\n";
 	print	FILE $access->{refresh_token} . "\n";
 	close	FILE;
+	$self->redirect_to('show_vacancies');
 }
 
 sub delete {
