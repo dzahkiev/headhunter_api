@@ -8,7 +8,7 @@ use feature qw( switch say );
 AppHH::DB->db_connect( 'test', 'localhost', '3306' );
 AppHH::DB->create_table;
 
-open FILE_INPUT, "< lib/config/conf.txt";
+open FILE_INPUT, '<', 'lib/config/conf.txt';
 chomp (my @lines = <FILE_INPUT>);
 my $access_tocken  = $lines[0];
 my %auth_header = ( Authorization => "Bearer $access_tocken" );

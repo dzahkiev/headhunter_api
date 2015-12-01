@@ -16,8 +16,18 @@ sub vacancies {
 sub negotiations {
   my $self = shift;
   my $query =  "select * from negotiations";
-  my $negotiations = AppHH::DB->select( $query );
-  say Dumper $negotiations;
+  my @params;
+  if ( $self->param( 'ID' ) ) {
+    if ( $self->param( 'status' ) ) {
+      $query = "select * from negotiations where vacancy_id = ? and status = ?";
+       push @params, ( $self->param( 'ID' ), $self->param( 'status' ) );
+      }
+    else {
+      $query = "select * from negotiations where vacancy_id = ?";
+      push @params, $self->param( 'ID' );
+    }
+  }
+  my $negotiations = AppHH::DB->select( $query, @params );
   return $self->render( negotiations => $negotiations);
 }
 
