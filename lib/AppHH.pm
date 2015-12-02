@@ -5,8 +5,6 @@ use AppHH::DB;
 sub startup {
 	my $self = shift;
 
-	$self->plugin('AppHH::Helpers');
-
 	my $r = $self->routes;
 	$r->get('/auth'	)	->to(	'auth#callback'	)	->name('auth_user');
 	$r->get('/login')	->to(	'auth#login'	)	->name('login');

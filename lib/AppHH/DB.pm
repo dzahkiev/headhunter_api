@@ -54,7 +54,6 @@ sub create_table {
 }
 
 sub select {
-	$dbh->do('SET CHARACTER SET utf8');
 	my ( $class, $query, @param ) = @_;
 	my $sth = $dbh->prepare( $query );
 	$sth->execute( @param );
@@ -80,7 +79,7 @@ sub insert_vacancies {
 			$vacancy->{counters}{responses},
 			$vacancy->{counters}{unread_responses},
 			$vacancy->{counters}{views},
-			$vacancy->{counters}{invitations},
+			$vacancy->{counters}{invitations_and_responses},
 			$type
 		);
 		$sth->execute(@values);

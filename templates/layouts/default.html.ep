@@ -5,6 +5,8 @@
  	 <meta charset="utf8">
   	<link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'>
     <link rel='stylesheet' href='/css/styles.css' type='text/css' media='all'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
   </head>
   	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
@@ -15,9 +17,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<%= url_for 'logout' %>">Выйти</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
+        <!--  <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Поиск...">
-          </form>
+          </form>  -->
         </div>
       </div>
     </div>
@@ -31,5 +33,14 @@
             <li><a href="<%= url_for 'show_negotiations' %>">Отклики</a></li>
           </ul>
           </div>
-  <body><%= content %></body>
+  <body>
+    <%= content %>
+<script type="text/javascript">
+$(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+); 
+</script>
+  </body>
 </html>
