@@ -1,15 +1,7 @@
-package AppHH::Controller::Vacancies;
+package App::Controller::Negotiations;
 use base 'Mojolicious::Controller';
 
-
-sub vacancies {
-  my $self = shift;
-  my $query =  "select *, (select count(*) from negotiations where status = 'inbox' and vacancy_id = vacancies.id ) as count_responses  from vacancies";
-  my $vacancies = AppHH::DB->select( $query );
-  return $self->render( vacancies => $vacancies);
-}
-
-sub negotiations {
+sub list {
   my $self = shift;
   my $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations";
   my @params;
@@ -23,13 +15,13 @@ sub negotiations {
       push @params, $self->param( 'ID' );
     }
   }
-  my $negotiations = AppHH::DB->select( $query, @params );
+  my $negotiations = App::DB->select( $query, @params );
   return $self->render( negotiations => $negotiations);
 }
 
-sub save_negotiation {
+sub update {
     my $self = shift;
-    my $sth = AppHH::DB->db->prepare("update negotiations set local_status = ? where id = ?");
+    my $sth = App::DB->db->prepare("update negotiations set local_status = ? where id = ?");
     $sth->execute( $self->param('status'), $self->param('editID') );
     my $vacancy_id = $self->param( 'ID' );
     return $self->redirect_to("/negotiations/$vacancy_id");

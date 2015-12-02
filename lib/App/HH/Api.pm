@@ -1,4 +1,4 @@
-package AppHH::HH::Api;
+package App::HH::Api;
 use warnings;
 use feature qw( switch say );
 use Data::Dumper;

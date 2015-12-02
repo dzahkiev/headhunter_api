@@ -34,7 +34,7 @@
 	<td><%= $negotiation->{status} %></td>
   <td class="status">
     % if ( $self->param('editID') eq $negotiation->{id} ) {
-    <form action="<%= url_for 'save_negotiation' %>" method = "post">
+    <form action="<%= url_for 'update_negotiation' %>" method = "post">
     <input type="text" value="<%= $negotiation->{local_status} %>" name = "status">
     <button type="submit" name="save"><span class="glyphicon glyphicon-floppy-disk"></button>
 

@@ -2,7 +2,7 @@
 <br><br>
 <h2 class="sub-header">Вакансии</h2>
        <div class="table-responsive table-bordered" style="margin-right:20px">
-         <table class="table tablesorter table-striped table-bordered table-hover table-condensed table-bordered" id="myTable" >
+         <table class="table tablesorter  table-bordered table-hover table-condensed table-bordered" id="myTable" >
            <thead>
              <tr>
                <th>ID</th>
@@ -19,7 +19,7 @@
            </thead>
            <tbody>
 % for my $vacancy ( @$vacancies ) {
-	<tr>
+	<tr class="status_<%= $vacancy->{status} %>">
 	<td><%= $vacancy->{id} %></td>
 	<td><%= $vacancy->{name} %></td>
 	<td><%= $vacancy->{region} %></td>
@@ -33,7 +33,7 @@
   </td>
 	<td class="views"><%= $vacancy->{views} || '-'%></td>
 	<td><%= $vacancy->{invitations} || '-'%></td>
-	<td class="<%= $vacancy->{status} %><%= 'd' if ($vacancy->{status} eq 'active')%>"><%= $vacancy->{status} %></td>
+	<td><%= $vacancy->{status} %></td>
 </tr>
 % } 
 </tbody>

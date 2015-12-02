@@ -1,14 +1,21 @@
-package AppHH::Controller::Auth;
+package App::Controller::Auth;
 use Mojo::Base 'Mojolicious::Controller';
-use AppHH::HH::Conf;
+use App::HH::Conf;
 
-my %data= AppHH::HH::Conf->get_conf;
+my %data= App::HH::Conf->get_conf;
 
 sub login {
 	my $self = shift;
+	open FILE_INPUT, '<', 'lib/config/conf.txt';
+	chomp (my @lines = <FILE_INPUT>);
+	$self->session ({
+		access_token	=> $lines[0],
+		refresh_token	=> $lines[1]
+		});
 	return 1 if ( $self->session( 'access_token') );
 	my $url = Mojo::URL->new( sprintf("https://hh.ru/oauth/authorize?response_type=code&client_id=%s&redirect_uri=%s", $data{client_id}, $data{redirect_uri} ) );
-	$self->redirect_to( $url );
+	$self->flash(url => $url);
+	$self->redirect_to( 'auth_form');
 }
 
 sub callback {
