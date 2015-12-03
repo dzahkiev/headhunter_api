@@ -1,4 +1,5 @@
 <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'></head>
+<!--
 <div class="alert alert-info">
 <h5>Необходимо создать новую запись для продолжения работы</h5>
 </div>
@@ -11,4 +12,7 @@
 	<br>
 	<input type="submit" size="40" name="submit" value="Создать">
 </form>
-
+-->
+<div class="alert alert-info">
+<a href="<%= $url %>"> Авторизация </a>
+</div>

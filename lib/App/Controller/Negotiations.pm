@@ -7,7 +7,7 @@ sub list {
   my @params;
   if ( $self->param('ID') ) {
     if ( $self->param('status') ) {
-       $query = "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations where vacancy_id = ? and status = ?";
+      $query = "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations where vacancy_id = ? and status = ?";
        push @params, ( $self->param('ID'), $self->param('status') );
       }
     else {
