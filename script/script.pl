@@ -29,7 +29,7 @@ my $manager_id	= $res->json->{employer}{manager_id};
 for my $type ( qw /active archived hidden/ ) {
 	my $vacancies = App::HH::Api->get_vacancies( $type, $employer_id, $manager_id, %auth_header );
 	my $sth_vacancy = $dbh->prepare("insert into vacancies set id = ?, name = ?, region = ?, created = ?, updated = ?, responses = ?, unread_responses = ?, views = ?, invitations = ?, status = ? 
-	on duplicate key update name = values(name), region = values(region), updated = values(updated), responses = values(responses), unread_responses = values(unread_responses), views = values(views), invitations = values(invitations), status = values(status) ");
+	on duplicate key update name = values(name), region = values(region), updated = values(updated), responses = values(responses), unread_responses = values(unread_responses), views = values(views), invitations = values(invitations), status = values(status)");
 	for my $vacancy ( @$vacancies ) {
 		my @values = (
 			$vacancy->{id},

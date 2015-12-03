@@ -3,7 +3,7 @@ use Mojo::Base 'Mojolicious::Controller';
 use App::HH::Conf;
 
 my %data= App::HH::Conf->get_conf;
-
+my @lines;
 sub auth {
 	my $self = shift;
 	return 1 if ( $self->session('login') );
@@ -13,7 +13,7 @@ sub auth {
 sub create {
 	my $self = shift;
 	open FILE, '<', '../conf.txt';
-	chomp (my @lines = <FILE>);
+	chomp (@lines = <FILE>);
 	close	FILE;
 	if ( $lines[0] ) {
 		if ($self->param('submit')) {
@@ -37,6 +37,7 @@ sub create {
 
 sub form {
 	my $self = shift;
+	return $self->redirect_to('login') if @lines;
 	if ($self->param('submit')) {
 	my $params = $self->req->params->to_hash;
 	my $validator = Mojolicious::Validator->new;
@@ -64,8 +65,6 @@ sub callback {
 		client_secret	=> $data{secret_key},
 		code		=> $self->param( 'code' ),
 		redirect_uri	=> $data{redirect_uri}		} )->res->json;
-	$self->session (access_token	=> $access->{access_token});
-	$self->session(expiration => $access->{expires_in});
 	open	FILE, '>', '../conf.txt';
 	print	FILE $access->{access_token} . "\n";
 	print	FILE $access->{refresh_token} . "\n";

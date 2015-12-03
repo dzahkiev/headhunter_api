@@ -1,6 +1,6 @@
 <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'></head>
 <div class="alert alert-info">
-Необходимо <strong>Авторизоваться</strong>  для продолжения работы
+<h5>Необходимо создать новую запись для продолжения работы</h5>
 </div>
 
 <form action="<%= url_for 'auth_form' %>" method="post">
@@ -9,6 +9,6 @@
 	<br><strong>Пароль</strong><br>
 	<input type="password" size="40" name="password" value="">
 	<br>
-	<input type="submit" size="40" name="submit" value="Регистрировать">
+	<input type="submit" size="40" name="submit" value="Создать">
 </form>
 

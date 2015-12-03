@@ -1,7 +1,5 @@
 package App::HH::Api;
 use warnings;
-use feature qw( switch say );
-use Data::Dumper;
 use Mojo::UserAgent;
 
 my $ua = Mojo::UserAgent->new;
