@@ -8,8 +8,10 @@ sub startup {
 	my $r = $self->routes;
 	$r->get('/auth'	)		->to(	'auth#callback'	)	->name('auth_user');
 	$r->get('/login')		->to(	'auth#create'	)	->name('login');
+	$r->post('/login')		->to(	'auth#create'	)	->name('login');
 	$r->get('/logout')		->to(	'auth#delete'	)	->name('logout');
-	$r->get('/form')		->to(	'auth#form'	)	->name('auth_form');
+	$r->any('/form')		->to(	'auth#form'	)	->name('auth_form');
+	$r->any('/login/form')		->to(	'auth#loginform'	)	->name('login_form');
 
 
 	my $auth = $r->under( '/' )			->to('auth#auth')			->name('check_auth');

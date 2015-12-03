@@ -1,14 +1,13 @@
 <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'></head>
-<div class="alert alert-info">
-Необходимо <strong>Авторизоваться</strong>  для продолжения работы
-</div>
 
-<form action="<%= url_for 'auth_form' %>" method="post">
+
+<form action="<%= url_for 'login' %>" method="post">
 	<br><strong>Логин</strong><br>
 	<input type="text" size="40" name="email" value="">
 	<br><strong>Пароль</strong><br>
 	<input type="password" size="40" name="password" value="">
 	<br>
-	<input type="submit" size="40" name="submit" value="Регистрировать">
+	<input type="submit" size="40" name="submit" value="Войти">
 </form>
+
 
