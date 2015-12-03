@@ -1,5 +1,5 @@
 .table th {
-  background: #D4EDF2;
+  background: #CCCCCC;
 }
 .responses {
   color: green;
@@ -26,9 +26,21 @@
 	font-style: italic;
   background-color: #FEFFC2;
 }
-#myTable{
+.inbox {
+  background-color: #D3F3F8;
+}
+.invited{
+  background-color: #ADEFA9;
+}
+.discarded{
+  background-color: #F8C3C5;
+}
+.hold{
+  background-color: #F5F8C3;
 }
 
+#myTable{
+}
 table.tablesorter thead tr .header {
   background-image: url(../img/bg.gif);
   background-repeat: no-repeat;

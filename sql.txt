@@ -1,0 +1,30 @@
+CREATE TABLE `negotiations` (
+  `id` int(10) NOT NULL,
+  `vacancy_id` int(10) NOT NULL,
+  `first_name` varchar(256) DEFAULT NULL,
+  `last_name` varchar(256) DEFAULT NULL,
+  `middle_name` varchar(256) DEFAULT NULL,
+  `gender` varchar(16) DEFAULT NULL,
+  `age` int(3) DEFAULT NULL,
+  `resume_title` varchar(512) DEFAULT NULL,
+  `resume_url` varchar(512) DEFAULT NULL,
+  `status` varchar(32) DEFAULT NULL,
+  `local_status` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+---------------------------------------
+
+CREATE TABLE `vacancies` (
+  `id` int(10) NOT NULL,
+  `name` varchar(256) DEFAULT NULL,
+  `region` varchar(256) DEFAULT NULL,
+  `created` varchar(32) DEFAULT NULL,
+  `updated` varchar(32) DEFAULT NULL,
+  `responses` int(10) DEFAULT NULL,
+  `unread_responses` int(10) DEFAULT NULL,
+  `views` int(10) DEFAULT NULL,
+  `invitations` int(10) DEFAULT NULL,
+  `status` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

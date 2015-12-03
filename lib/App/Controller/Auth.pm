@@ -15,14 +15,19 @@ sub create {
 	open FILE, '<', '../conf.txt';
 	chomp (my @lines = <FILE>);
 	close	FILE;
-	$self->session ({
-		access_token	=> $lines[0],
-		refresh_token	=> $lines[1]
-		});
-	$self->redirect_to('show_vacancies') if ( $self->session( 'access_token') );
+	$self->session (access_token	=> $lines[0]);
+	if ( $self->session( 'access_token') ) {
+		$self->redirect_to('show_vacancies');
+	}
+	else {
+		$self->redirect_to( 'auth_form');
+	}
+}
+
+sub  form {
+	my $self = shift;
 	my $url = Mojo::URL->new( sprintf("https://hh.ru/oauth/authorize?response_type=code&client_id=%s&redirect_uri=%s", $data{client_id}, $data{redirect_uri} ) );
-	$self->flash(url => $url);
-	$self->redirect_to( 'auth_form');
+	$self->render(url => $url);
 }
 
 sub callback {
@@ -33,11 +38,8 @@ sub callback {
 		client_secret	=> $data{secret_key},
 		code		=> $self->param( 'code' ),
 		redirect_uri	=> $data{redirect_uri}		} )->res->json;
-	$self->session ( {
-		access_token	=> $access->{access_token},
-		refresh_token	=> $access->{refresh_token},
-		token_type	=> "\u$access->{token_type}"	} );
-	$self->session( expiration => $access->{expires_in} );
+	$self->session (access_token	=> $access->{access_token});
+	$self->session(expiration => $access->{expires_in});
 	open	FILE, '>', '../conf.txt';
 	print	FILE $access->{access_token} . "\n";
 	print	FILE $access->{refresh_token} . "\n";

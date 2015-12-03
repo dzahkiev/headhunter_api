@@ -31,8 +31,8 @@
     <span style="color:grey;"><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%></span>
     <%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : '' %></a>
   </td>
-	<td class="views"><%= $vacancy->{views} || '-'%></td>
-	<td><%= $vacancy->{invitations} || '-'%></td>
+	<td class="views"><%= $vacancy->{views} || ''%></td>
+	<td><%= $vacancy->{invitations} || ''%></td>
 	<td><%= $vacancy->{status} %></td>
 </tr>
 % } 
