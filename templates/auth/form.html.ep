@@ -2,3 +2,6 @@
 <div class="alert alert-info">
 Необходимо <a href="<%= $url %>"><strong>Авторизоваться</strong>  </a> для продолжения работы
 </div>
+
+
+

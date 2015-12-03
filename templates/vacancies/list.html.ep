@@ -19,7 +19,7 @@
            </thead>
            <tbody>
 % for my $vacancy ( @$vacancies ) {
-	<tr class="status_<%= $vacancy->{status} %>">
+	<tr>
 	<td><%= $vacancy->{id} %></td>
 	<td><%= $vacancy->{name} %></td>
 	<td><%= $vacancy->{region} %></td>
@@ -33,7 +33,7 @@
   </td>
 	<td class="views"><%= $vacancy->{views} || ''%></td>
 	<td><%= $vacancy->{invitations} || ''%></td>
-	<td><%= $vacancy->{status} %></td>
+	<td class="status_<%= $vacancy->{status} %>"><%= $vacancy->{status} %></td>
 </tr>
 % } 
 </tbody>

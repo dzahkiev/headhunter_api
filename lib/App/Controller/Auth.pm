@@ -24,7 +24,7 @@ sub create {
 	}
 }
 
-sub  form {
+sub form {
 	my $self = shift;
 	my $url = Mojo::URL->new( sprintf("https://hh.ru/oauth/authorize?response_type=code&client_id=%s&redirect_uri=%s", $data{client_id}, $data{redirect_uri} ) );
 	$self->render(url => $url);
