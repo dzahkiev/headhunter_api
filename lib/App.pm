@@ -7,12 +7,12 @@ sub startup {
 
 	my $r = $self->routes;
 	$r->get('/auth'	)		->to(	'auth#callback'	)	->name('auth_user');
-	$r->get('/login')		->to(	'auth#login'	)	->name('login');
+	$r->get('/login')		->to(	'auth#create'	)	->name('login');
 	$r->get('/logout')		->to(	'auth#delete'	)	->name('logout');
 	$r->get('/form')		->to(	'auth#form'	)	->name('auth_form');
 
 
-	my $auth = $r->under( '/' )			->to('auth#login')			->name('login');
+	my $auth = $r->under( '/' )			->to('auth#auth')			->name('check_auth');
 	$auth->get('/')					->to('vacancies#list')		->name('show_vacancies');
 	$auth->get('/vacancies')			->to('vacancies#list')		->name('show_vacancies');
 	$auth->get('/negotiations')			->to('negotiations#list')		->name('show_negotiations');

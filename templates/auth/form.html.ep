@@ -1,2 +1,4 @@
 <link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'></head>
-Необходимо <a href="<%= flash 'url' %>"> Авторизоваться </a> для продолжения работы
+<div class="alert alert-info">
+Необходимо <a href="<%= flash 'url' %>"><strong>Авторизоваться</strong>  </a> для продолжения работы
+</div>

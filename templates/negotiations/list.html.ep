@@ -32,7 +32,7 @@
   <td><a href = "<%= $negotiation->{resume_url} %>">посмотреть</a></td>  
   <td><%= $negotiation->{vacancy} %></td>
 	<td><%= $negotiation->{status} %></td>
-  <td class="status">
+  <td class="<%= 'status' if  $negotiation->{local_status} %>">
     % if ( $self->param('editID') eq $negotiation->{id} ) {
     <form action="<%= url_for 'update_negotiation' %>" method = "post">
     <input type="text" value="<%= $negotiation->{local_status} %>" name = "status">

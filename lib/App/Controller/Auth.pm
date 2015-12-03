@@ -4,15 +4,22 @@ use App::HH::Conf;
 
 my %data= App::HH::Conf->get_conf;
 
-sub login {
+sub auth {
 	my $self = shift;
-	open FILE_INPUT, '<', 'lib/config/conf.txt';
-	chomp (my @lines = <FILE_INPUT>);
+	return 1 if ( $self->session( 'access_token') );
+	$self->redirect_to('login');
+}
+
+sub create {
+	my $self = shift;
+	open FILE, '<', '../conf.txt';
+	chomp (my @lines = <FILE>);
+	close	FILE;
 	$self->session ({
 		access_token	=> $lines[0],
 		refresh_token	=> $lines[1]
 		});
-	return 1 if ( $self->session( 'access_token') );
+	$self->redirect_to('show_vacancies') if ( $self->session( 'access_token') );
 	my $url = Mojo::URL->new( sprintf("https://hh.ru/oauth/authorize?response_type=code&client_id=%s&redirect_uri=%s", $data{client_id}, $data{redirect_uri} ) );
 	$self->flash(url => $url);
 	$self->redirect_to( 'auth_form');
@@ -31,7 +38,7 @@ sub callback {
 		refresh_token	=> $access->{refresh_token},
 		token_type	=> "\u$access->{token_type}"	} );
 	$self->session( expiration => $access->{expires_in} );
-	open	FILE, '>', 'lib/config/conf.txt';
+	open	FILE, '>', '../conf.txt';
 	print	FILE $access->{access_token} . "\n";
 	print	FILE $access->{refresh_token} . "\n";
 	close	FILE;

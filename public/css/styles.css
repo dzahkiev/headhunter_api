@@ -14,6 +14,8 @@
   background: #DCF9D8;
 }
 .status_hidden {
+  background: #c9c9c9;
+  color:#808080;
   background: #D2D7D1;
 }
 .status_archived {

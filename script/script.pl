@@ -3,23 +3,22 @@ use strict;
 use lib::App::HH::Api;
 use Mojo::UserAgent;
 use DBI;
-
 my $dbh = DBI->connect( sprintf( "DBI:mysql:dbname=test;host=localhost;port=3306" ) ) or die "Couldn't connect!";
 
-open FILE_INPUT, '<', 'lib/config/conf.txt';
-chomp (my @lines = <FILE_INPUT>);
+open FILE, '<', '../conf.txt';
+chomp (my @lines = <FILE>);
+close FILE;
 my $access;
 $access->{access_token}  = $lines[0];
 $access->{refresh_token} = $lines[1];
 my %auth_header = ( Authorization => "Bearer $access->{access_token}" );
-
 my $ua = Mojo::UserAgent->new;
 my $res= $ua->get( "https://api.hh.ru/me" => { %auth_header } )->res;
 if ( $res->code == 403 ) {
 	$access = $ua->post( "https://hh.ru/oauth/token" => form => {
 	grant_type 		=> 'refresh_token',
 	refresh_token 	=> $access->{refresh_token}	 })->res->json;
-	open	FILE, '>', 'lib/config/conf.txt';
+	open	FILE, '>', '../conf.txt';
 	print	FILE $access->{access_token} . "\n";
 	print	FILE $access->{refresh_token} . "\n";
 	close	FILE;
@@ -69,3 +68,7 @@ for my $type ( qw /active archived hidden/ ) {
 		}
 	}
 }
+$dbh->do("delete from negotiations where vacancy_id in (select id from vacancies where status = 'hidden' )");
+$dbh->do("delete from vacancies where status = 'hidden'");
+
+
