@@ -31,6 +31,8 @@ for my $type ( qw /active archived hidden/ ) {
 	my $sth_vacancy = $dbh->prepare("insert into vacancies set id = ?, name = ?, region = ?, created = ?, updated = ?, responses = ?, unread_responses = ?, views = ?, invitations = ?, status = ? 
 	on duplicate key update name = values(name), region = values(region), updated = values(updated), responses = values(responses), unread_responses = values(unread_responses), views = values(views), invitations = values(invitations), status = values(status)");
 	for my $vacancy ( @$vacancies ) {
+		$vacancy->{created_at} =~ s/(\d{4}-\d{2}-\d{2}).(\d{2}:\d{2}:\d{2}).*$/$1 $2/;
+		$vacancy->{published_at} =~ s/(\d{4}-\d{2}-\d{2}).(\d{2}:\d{2}:\d{2}).*$/$1 $2/;
 		my @values = (
 			$vacancy->{id},
 			$vacancy->{name},
