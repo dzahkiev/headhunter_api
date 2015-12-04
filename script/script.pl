@@ -4,7 +4,6 @@ use lib::App::HH::Api;
 use Mojo::UserAgent;
 use DBI;
 my $dbh = DBI->connect( sprintf( "DBI:mysql:dbname=test;host=localhost;port=3306" ) ) or die "Couldn't connect!";
-
 open FILE, '<', '../conf.txt';
 chomp (my @lines = <FILE>);
 close FILE;
@@ -72,5 +71,4 @@ for my $type ( qw /active archived hidden/ ) {
 }
 $dbh->do("delete from negotiations where vacancy_id in (select id from vacancies where status = 'hidden' )");
 $dbh->do("delete from vacancies where status = 'hidden'");
-
 
