@@ -9,7 +9,7 @@ CREATE TABLE `negotiations` (
   `resume_title` varchar(512) DEFAULT NULL,
   `resume_url` varchar(512) DEFAULT NULL,
   `status` varchar(32) DEFAULT NULL,
-  `local_status` varchar(128) DEFAULT NULL,
+  `local_status` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 

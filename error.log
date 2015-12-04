@@ -2,3 +2,42 @@ Fri Dec  4 16:21:04 MSK 2015
 Fri Dec  4 16:24:03 MSK 2015
 Fri Dec  4 16:27:04 MSK 2015
 Fri Dec  4 16:30:03 MSK 2015
+Use of uninitialized value $employer_id in concatenation (.) or string at lib/App/HH/Api.pm line 9.
+Use of uninitialized value $manager_id in concatenation (.) or string at lib/App/HH/Api.pm line 9.
+Use of uninitialized value $employer_id in concatenation (.) or string at lib/App/HH/Api.pm line 9.
+Use of uninitialized value $manager_id in concatenation (.) or string at lib/App/HH/Api.pm line 9.
+Use of uninitialized value $employer_id in concatenation (.) or string at lib/App/HH/Api.pm line 9.
+Use of uninitialized value $manager_id in concatenation (.) or string at lib/App/HH/Api.pm line 9.
+Fri Dec  4 16:33:01 MSK 2015
+Fri Dec  4 16:36:03 MSK 2015
+Fri Dec  4 16:39:03 MSK 2015
+Fri Dec  4 16:42:03 MSK 2015
+Fri Dec  4 16:45:04 MSK 2015
+Fri Dec  4 16:48:03 MSK 2015
+Fri Dec  4 16:51:04 MSK 2015
+Fri Dec  4 16:54:03 MSK 2015
+Fri Dec  4 16:57:03 MSK 2015
+Fri Dec  4 17:00:03 MSK 2015
+Fri Dec  4 17:03:04 MSK 2015
+Fri Dec  4 17:06:04 MSK 2015
+Fri Dec  4 17:09:03 MSK 2015
+Fri Dec  4 17:12:03 MSK 2015
+Fri Dec  4 17:15:02 MSK 2015
+Fri Dec  4 17:18:04 MSK 2015
+Fri Dec  4 17:21:03 MSK 2015
+Fri Dec  4 17:24:02 MSK 2015
+Fri Dec  4 17:27:04 MSK 2015
+Fri Dec  4 17:30:03 MSK 2015
+Fri Dec  4 17:33:02 MSK 2015
+Fri Dec  4 17:36:02 MSK 2015
+Fri Dec  4 17:39:03 MSK 2015
+Fri Dec  4 17:42:03 MSK 2015
+Fri Dec  4 17:45:04 MSK 2015
+Fri Dec  4 17:48:03 MSK 2015
+Fri Dec  4 17:51:04 MSK 2015
+Fri Dec  4 17:54:03 MSK 2015
+Fri Dec  4 17:57:03 MSK 2015
+Fri Dec  4 18:00:03 MSK 2015
+Fri Dec  4 18:03:04 MSK 2015
+Fri Dec  4 18:06:03 MSK 2015
+Fri Dec  4 18:09:03 MSK 2015

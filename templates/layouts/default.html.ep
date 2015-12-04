@@ -30,14 +30,14 @@
             <li><a href="<%= url_for 'show_negotiations' %>">Отклики</a></li>
           </ul>
           </div>
-  <body>
-    <%= content %>
+<body>
+<%= content %>
 <script type="text/javascript">
 $(document).ready(function() 
     { 
         $("#myTable").tablesorter(); 
     } 
-); 
+);
 </script>
-  </body>
+</body>
 </html>

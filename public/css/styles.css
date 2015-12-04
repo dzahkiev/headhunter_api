@@ -3,12 +3,12 @@
 }
 .responses {
   color: green;
-}
+  }
 .new_responses {
   color: red;
 }
 .views {
-  color: blue;
+  color: #75B1C2;
 }
 .status_active {
   background: #DCF9D8;

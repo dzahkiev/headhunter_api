@@ -28,10 +28,10 @@
 	<td><a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>" class="responses"><%= $vacancy->{responses} || '' %></a></td>
 	<td>
     <a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>?status=inbox" class="new_responses">
-    <span style="color:grey;"><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%></span>
+    <span style="color:green;"><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%> </span>
     <%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : '' %></a>
   </td>
-	<td class="views"><%= $vacancy->{views} || ''%></td>
+	<td><%= $vacancy->{views} || ''%></td>
 	<td><%= $vacancy->{invitations} || ''%></td>
 	<td class="status_<%= $vacancy->{status} %>"><%= $vacancy->{status} %></td>
 </tr>
