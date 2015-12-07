@@ -1,46 +1,62 @@
 % layout 'default';
+<% 
+my %status  = (
+  invited => 'приглашен(а)',
+  inbox =>'неразобранно',
+  hold => 'подумать',
+  discarded =>'отказано',
+);
+%>
 <br><br>
 <h2 class="sub-header">Отклики</h2>
+<form action="" method="post">
+<select  name="status">
+  <option value = "invited" <%= 'selected' if $self->param('status') eq 'invited'%>>Приглашенные</option>
+  <option value = "inbox" <%= 'selected' if $self->param('status') eq 'inbox'%>>Неразобранные</option>
+  <option value = "hold" <%= 'selected' if $self->param('status') eq 'hold'%>>Подумать</option>
+  <option value = "discarded" <%= 'selected' if $self->param('status') eq 'discarded'%>>Отсеянные</option>
+</select>
+<input type="submit" value="Показать" />
+</form>
+
 <div class="table-responsive table-bordered" style="margin-right:20px">
     <table class="table tablesorter table-striped table-bordered table-hover table-condensed table-bordered" id="myTable">
     <thead>
       <tr>
-        <th>ID</th>
+        <th>#</th>
         <th>Имя</th>
         <th>Фамилия</th>
         <th>Отчество</th>
         <th>Пол</th>
         <th>Возраст</th>
         <th>Резюме</th>
-        <th>Ссылка на резюме</th>
         <th>Отклик на вакансию</th>
         <th>Статус</th>
         <th>Примечание менеджера</th>
       </tr>
      </thead>
    <tbody>
-
+% my $i = 1;
 % for my $negotiation ( @$negotiations ) {
 	<tr>
-	<td><%= $negotiation->{id} %></td>
+	<td><%= $i++ %></td>
 	<td><%= $negotiation->{first_name} %></td>
 	<td><%= $negotiation->{last_name} %></td>
 	<td><%= $negotiation->{middle_name} %></td>
 	<td><%= $negotiation->{gender} %></td>
 	<td><%= $negotiation->{age} %></td>
-	<td><%= $negotiation->{resume_title} %></td>
-  <td><a href = "<%= $negotiation->{resume_url} %>">посмотреть</a></td>  
-  <td><%= $negotiation->{vacancy} %></td>
-	<td class="<%=$negotiation->{status} %>"><%= $negotiation->{status} %></td>
+	<td><a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></td>
+  <td><a href="<%= url_for 'show_vacancy' %><%="$negotiation->{vacancy_id}"%>"><%= $negotiation->{vacancy} %></a></td>
+	<td class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></td>
   <td class="<%= 'status' if  $negotiation->{local_status} %>">
     % if ( $self->param('editID') eq $negotiation->{id} ) {
     <form action="<%= url_for 'update_negotiation' %>" method = "post">
-    <input type="text" value="<%= $negotiation->{local_status} %>" name = "status">
+    <input type="text" value="<%= $negotiation->{local_status} %>" name = "local_status">
     <button type="submit" name="save"><span class="glyphicon glyphicon-floppy-disk"></button>
 
     %} else {
     <%= $negotiation->{local_status} %>
-    <a href="<%= url_for 'show_negotiations'%><%="/$negotiation->{vacancy_id}/$negotiation->{id}"%>">
+    <a href="<%= url_for 'show_negotiations'%><%="/$negotiation->{vacancy_id}/$negotiation->{id}/?status=$negotiation->{status}"%>">
      <span class="glyphicon glyphicon-pencil"></a>
     %}
   </td>

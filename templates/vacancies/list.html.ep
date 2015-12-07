@@ -1,6 +1,19 @@
 % layout 'default';
+<% 
+my %status  = (
+  active => 'активная',
+  archived =>'архивная',
+);
+%>
 <br><br>
 <h2 class="sub-header">Вакансии</h2>
+<form action="" method="post">
+<select  name="status">
+  <option value = "active" <%= 'selected' if $self->param('status') eq 'active'%>>Активные</option>
+  <option value = "archived" <%= 'selected' if $self->param('status') eq 'archived'%>>Архивные</option>
+</select>
+<input type="submit" value="Показать" />
+</form>
        <div class="table-responsive table-bordered" style="margin-right:20px">
          <table class="table tablesorter  table-bordered table-hover table-condensed table-bordered" id="myTable" >
            <thead>
@@ -8,6 +21,7 @@
                <th>ID</th>
                <th>Название вакансии</th>
                <th>Город</th>
+               <th>Менеджер</th>
                <th>Дата создания</th>
                <th>Опубликовано</th>
                <th>Отклики</th>
@@ -21,8 +35,9 @@
 % for my $vacancy ( @$vacancies ) {
 	<tr>
 	<td><%= $vacancy->{id} %></td>
-	<td><%= $vacancy->{name} %></td>
+	<td><a href="<%= url_for 'show_vacancy' %><%="$vacancy->{id}"%>"><%= $vacancy->{name} %></a></td>
 	<td><%= $vacancy->{region} %></td>
+  <td><%= $vacancy->{manager_name} %></td>
 	<td><%= $vacancy->{created} %></td>
 	<td><%= $vacancy->{updated} %></td>
 	<td><a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>" class="responses"><%= $vacancy->{responses} || '' %></a></td>
@@ -33,7 +48,7 @@
   </td>
 	<td><%= $vacancy->{views} || ''%></td>
 	<td><%= $vacancy->{invitations} || ''%></td>
-	<td class="status_<%= $vacancy->{status} %>"><%= $vacancy->{status} %></td>
+	<td class="status_<%= $vacancy->{status} %>"><%= $status{$vacancy->{status}} %></td>
 </tr>
 % } 
 </tbody>
