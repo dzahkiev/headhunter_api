@@ -30,6 +30,7 @@ my %status  = (
         <th>Пол</th>
         <th>Возраст</th>
         <th>Резюме</th>
+        <th>Письмо</th>
         <th>Отклик на вакансию</th>
         <th>Статус</th>
         <th>Примечание менеджера</th>
@@ -46,19 +47,11 @@ my %status  = (
 	<td><%= $negotiation->{gender} %></td>
 	<td><%= $negotiation->{age} %></td>
 	<td><a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></td>
+  <td><%= $negotiation->{message} %></td>
   <td><a href="<%= url_for 'show_vacancy' %><%="$negotiation->{vacancy_id}"%>"><%= $negotiation->{vacancy} %></a></td>
 	<td class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></td>
   <td class="<%= 'status' if  $negotiation->{local_status} %>">
-    % if ( $self->param('editID') eq $negotiation->{id} ) {
-    <form action="<%= url_for 'update_negotiation' %>" method = "post">
-    <input type="text" value="<%= $negotiation->{local_status} %>" name = "local_status">
-    <button type="submit" name="save"><span class="glyphicon glyphicon-floppy-disk"></button>
-
-    %} else {
-    <%= $negotiation->{local_status} %>
-    <a href="<%= url_for 'show_negotiations'%><%="/$negotiation->{vacancy_id}/$negotiation->{id}/?status=$negotiation->{status}"%>">
-     <span class="glyphicon glyphicon-pencil"></a>
-    %}
+    <a href="<%= url_for 'show_negotiation'%><%=$negotiation->{id}%>"><%= $negotiation->{local_status} %><span class="glyphicon glyphicon-pencil"></a></a>
   </td>
 </tr>
 % } 

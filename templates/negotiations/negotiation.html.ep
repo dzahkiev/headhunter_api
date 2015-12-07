@@ -1,0 +1,31 @@
+% layout 'default';
+<% 
+my %status  = (
+  invited => 'приглашен(а)',
+  inbox =>'неразобранно',
+  hold => 'подумать',
+  discarded =>'отказано',
+);
+%>
+<br><br>
+<h2 class="sub-header"><%= $negotiation->{first_name} %>  <%= $negotiation->{last_name} %> <%= $negotiation->{middle_name} %></h2>
+<p>Пол: <%= $negotiation->{gender} %></p>
+<p>Возраст: <%= $negotiation->{age} %></p>
+<p>Резюме: <a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></p>
+<p>Откликнулся на вакансию <a href="<%= url_for 'show_vacancy' %><%="$negotiation->{vacancy_id}"%>"><%= $negotiation->{vacancy} %></a></p>
+<b>Сопроводительное письмо:</b>
+<hr>
+<p><%= $negotiation->{message} %></p>
+<hr>
+<p class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></p>
+<p>
+    % if ( $self->param('negotiationID') eq $negotiation->{id} ) {
+    <form action="<%= url_for 'update_negotiation' %>" method = "post">
+    <input type="text" value="<%= $negotiation->{local_status} %>" name = "local_status">
+    <button type="submit" name="save"><span class="glyphicon glyphicon-floppy-disk"></button>
+%} else {
+    <%= $negotiation->{local_status} %>
+    <a href="<%= url_for 'show_negotiation' %>">
+     <span class="glyphicon glyphicon-pencil"></span></a>
+    %}
+</p>

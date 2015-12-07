@@ -4,9 +4,6 @@ use lib::App::HH::Api;
 use Mojo::UserAgent;
 use DBI;
 
-use feature qw(say switch);
-use Data::Dumper; 
-
 
 my $dbh = DBI->connect( sprintf( "DBI:mysql:dbname=test;host=localhost;port=3306" ) ) or die "Couldn't connect!";
 open FILE, '<', '../conf.txt';
@@ -60,10 +57,10 @@ for my $manager (@$managers) {
 			for my $type_status ( qw /inbox hold invited discarded/ ) {
 				my $negotiations = App::HH::Api->get_negotiations( $type_status, $vacancy->{id}, %auth_header );
 				if ( @$negotiations ) {
-				my $sth_negotiation = $dbh->prepare("insert into negotiations set id = ?, vacancy_id = ?, first_name = ?, last_name = ?, middle_name = ?, gender = ?, age = ?, resume_title = ?, resume_url = ?, status = ? 
-				on duplicate key update  first_name = values(first_name), last_name = values(last_name), middle_name = values(middle_name), gender = values(gender), age = values(age), resume_title = values(resume_title), resume_url = values(resume_url), status = values(status)");
+				my $sth_negotiation = $dbh->prepare("insert into negotiations set id = ?, vacancy_id = ?, first_name = ?, last_name = ?, middle_name = ?, gender = ?, age = ?, resume_title = ?, resume_url = ?, message = ?, status = ?
+				on duplicate key update  first_name = values(first_name), last_name = values(last_name), middle_name = values(middle_name), gender = values(gender), age = values(age), resume_title = values(resume_title), resume_url = values(resume_url), message = values(message), status = values(status)");
 				for my $negotiation ( @$negotiations ) {
-					my $message = App::HH::Api->get_negotiation( $type_status, $negotiation->{id}, %auth_header );
+					my $message = App::HH::Api->get_negotiation( $negotiation->{id}, %auth_header );
 					my @values = (
 						$negotiation->{id},
 						$vacancy->{id},
@@ -74,6 +71,7 @@ for my $manager (@$managers) {
 						$negotiation->{resume}{age},
 						$negotiation->{resume}{title},
 						$negotiation->{resume}{alternate_url},
+						$message,
 						$type_status
 					);
 					$sth_negotiation->execute(@values);

@@ -24,17 +24,13 @@ sub get_negotiations {
 	my ( $class, $type, $id, %header ) = @_;
 	my $url = "https://api.hh.ru/negotiations/$type?vacancy_id=$id&per_page=999";
 	my $res = $ua->get( $url => { %header } )->res->json->{items};
-	say Dumper $res;
 	return $res;
 }
 
 sub get_negotiation {
 	my ( $class, $id, %header ) = @_;
-	my $url = "https://api.hh.ru/negotiations/nid=$id&per_page=999";
-	my $res = $ua->get( $url => { %header } )->res->json->{items};
-	say "---------------------------------";
-	say Dumper $res;
-	say "---------------------------------";
+	$url = "https://api.hh.ru/negotiations/$id/messages";
+	my $res = $ua->get( $url => { %header } )->res->json->{items}->[0]->{text};
 	return $res;
 }
 
