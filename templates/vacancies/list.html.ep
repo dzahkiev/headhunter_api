@@ -19,7 +19,7 @@ my %status  = (
          <table class="table tablesorter  table-bordered table-hover table-condensed table-bordered" id="myTable" >
            <thead>
              <tr>
-               <th>ID</th>
+               <th>#</th>
                <th>Название вакансии</th>
                <th>Город</th>
                <th>Менеджер</th>
@@ -33,9 +33,10 @@ my %status  = (
              </tr>
            </thead>
            <tbody>
+% my $i = 1;
 % for my $vacancy ( @$vacancies ) {
 	<tr>
-	<td><%= $vacancy->{id} %></td>
+	<td><%= $i++ %></td>
 	<td><a href="<%= url_for 'show_vacancy' %><%="$vacancy->{id}"%>"><%= $vacancy->{name} %></a></td>
 	<td><%= $vacancy->{region} %></td>
   <td><%= $vacancy->{manager_name} %></td>

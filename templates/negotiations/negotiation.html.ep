@@ -14,9 +14,11 @@ my %status  = (
 <p>Возраст: <%= $negotiation->{age} %></p>
 <p>Резюме: <a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></p>
 <p>Откликнулся на вакансию <a href="http://hh.ru/vacancy/<%=$negotiation->{vacancy_id}%>"><%= $negotiation->{vacancy} %></a></p>
-<hr>
+% if ($negotiation->{message}) {
 <b>Текст сопроводительного письма:</b>
+<br>
 <p><%= $negotiation->{message} %></p>
+%}
 <br>
 <p><small>Отклик оставлен: <%= $negotiation->{created} %></small></p>
 <hr>

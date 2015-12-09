@@ -21,7 +21,7 @@ my %status  = (
 </form>
 
 <div class="table-responsive table-bordered" style="margin-right:20px">
-    <table class="table tablesorter table-striped table-bordered table-hover table-condensed table-bordered" id="myTable">
+    <table class="table tablesorter table-striped table-bordered table-hover table-condensed" id="myTable">
     <thead>
       <tr>
         <th>#</th>
@@ -29,9 +29,9 @@ my %status  = (
         <th>Пол</th>
         <th>Возраст</th>
         <th>Резюме</th>
-        <th>Сообщение</th>
+        <th>Сопроводительное письмо</th>
         <th>Откликнулся на вакансию</th>
-        <th>Дата отклика</th>
+        <th style="white-space:pre;">Дата отклика</th>
         <th>Статус</th>
         <th>Примечание менеджера</th>
       </tr>
@@ -45,7 +45,11 @@ my %status  = (
 	<td><%= $negotiation->{gender} %></td>
 	<td><%= $negotiation->{age} %></td>
 	<td><a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></td>
-  <td><%= $negotiation->{message} %></td>
+  <td>
+% if ($negotiation->{message}) {
+<%= substr($negotiation->{message}, 0, 100) %>...
+%}
+</td>
   <td><a href="http://hh.ru/vacancy/<%=$negotiation->{vacancy_id}%>"><%= $negotiation->{vacancy} %></a></td>
   <td><%= $negotiation->{created} %></td>
 	<td class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></td>

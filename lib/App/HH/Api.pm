@@ -30,9 +30,9 @@ sub get_negotiations {
 sub get_negotiation {
 	my ( $class, $id, %header ) = @_;
 	$url = "https://api.hh.ru/negotiations/$id/messages";
-	my $res->{message} = $ua->get( $url => { %header } )->res->json->{items}->[0]->{text};
-	$url = "https://api.hh.ru/negotiations/$id";
-	$res->{created} = $ua->get( $url => { %header } )->res->json->{created_at};
+	my $res = $ua->get( $url => { %header } )->res->json->{items}->[0]->{text};
+	#$url = "https://api.hh.ru/negotiations/$id";
+	#$res->{created} = $ua->get( $url => { %header } )->res->json->{created_at};
 	return $res;
 }
 
