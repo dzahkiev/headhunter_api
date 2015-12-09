@@ -22,7 +22,17 @@ my %status  = (
 <br>
 <p><small>Отклик оставлен: <%= $negotiation->{created} %></small></p>
 <hr>
-<p>Статус: <span class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></span></p>
+%if ( ($negotiation->{status} eq 'inbox') || ($negotiation->{status} cmp 'discarded') ) {
+<form action="<%= url_for 'negotiation_update_status'%>" method="post" >
+  <select  name="set_status" class="selectpicker">
+  <option value = "invited">Пригласить</option>
+  <option value = "hold">Подумать</option>
+  <option value = "discarded">Отказать</option>
+</select>
+<input type="submit" value="ok" />
+</form>
+%}
+<p>Текущий статус: <span class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></span></p>
 <p>Примечание менеджера: 
     % if ( $self->param('edit') ) {
     <form action="<%= url_for 'update_negotiation' %>" method = "post">

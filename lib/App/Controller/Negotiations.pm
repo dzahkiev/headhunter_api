@@ -31,11 +31,25 @@ sub negotiation {
 }
 
 sub update {
-    my $self = shift;
-    my $sth = App::DB->db->prepare("update negotiations set local_status = ? where id = ?");
-    $sth->execute( $self->param('local_status'), $self->param('nID') );
-    my $id = $self->param('nID');
-    return $self->redirect_to("/negotiation/$id");
+  my $self = shift;
+  my $sth = App::DB->db->prepare("update negotiations set local_status = ? where id = ?");
+  $sth->execute( $self->param('local_status'), $self->param('nID') );
+  my $id = $self->param('nID');
+  return $self->redirect_to("/negotiation/$id");
+}
+
+sub update_status{
+  my $self = shift;
+  my $id = $self->param('nID');
+  my $status = $self->param('set_status');
+  my $url = "https://api.hh.ru/negotiations/$status/$id";
+  my $res = $self->ua->put( $url => { Authorization => "Bearer ".$self->session('access_token') } )->res;
+  if ($res->code == 204) {
+    my $sth = App::DB->db->prepare("update negotiations set status = ? where id = ?");
+    $sth->execute($status, $id);
+  }
+  return $self->redirect_to("/negotiation/$id");
+
 }
 
 1;

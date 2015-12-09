@@ -23,6 +23,7 @@ sub startup {
 	$auth->get('/negotiations/:ID')			->to('negotiations#list')		->name('show_negotiations');
 	$auth->post('/negotiations/:ID')			->to('negotiations#list')		->name('show_negotiations');
 	$auth->get('/negotiation/:nID')			->to('negotiations#negotiation')		->name('show_negotiation');
+	$auth->post('/negotiation/:nID')			->to('negotiations#update_status')		->name('negotiation_update_status');
 	$auth->post('/negotiation/:nID/update')			->to('negotiations#update')		->name('update_negotiation');
 	App::DB->db_connect( 'test', 'localhost', '3306' );
 }
