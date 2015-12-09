@@ -21,7 +21,7 @@ sub vacancy {
   my @param;
   my $status = $self->param('status')||'inbox';
   push @param, $self->param('ID');
-  my $query =  "select *, (select count(*) from negotiations where status = 'inbox' and vacancy_id = vacancies.id ) as count_responses  from vacancies where id = ? order by updated desc";
+  my $query =  "select * from vacancies where id = ? order by updated desc";
   my $vacancy = App::DB->select($query, $self->param('ID'))->[0];
   if ($status eq 'all') {
     $query = "select * from negotiations where vacancy_id = ? order by created desc";

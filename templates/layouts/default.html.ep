@@ -29,7 +29,7 @@
             <li><a href="<%= url_for 'show_vacancies' %>">Вакансии</a></li>
             <li><a href="<%= url_for 'show_negotiations' %>">Отклики</a></li>
           </ul>
-          </div>
+      </div>
 
 <body>
 <%= content %>

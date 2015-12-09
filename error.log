@@ -1,39 +1,51 @@
-Wed Dec  9 14:55:48 MSK 2015
-Wed Dec  9 14:56:54 MSK 2015
-Wed Dec  9 14:59:38 MSK 2015
-Wed Dec  9 14:59:48 MSK 2015
-Wed Dec  9 15:02:20 MSK 2015
-Wed Dec  9 15:04:56 MSK 2015
-Wed Dec  9 15:07:26 MSK 2015
-Wed Dec  9 15:10:26 MSK 2015
-Wed Dec  9 15:13:06 MSK 2015
-Wed Dec  9 15:16:20 MSK 2015
+Wed Dec  9 16:40:41 MSK 2015
+Wed Dec  9 16:43:11 MSK 2015
+Wed Dec  9 16:46:07 MSK 2015
+Wed Dec  9 16:49:16 MSK 2015
+Wed Dec  9 16:51:58 MSK 2015
+Wed Dec  9 16:55:35 MSK 2015
+Wed Dec  9 16:58:14 MSK 2015
+Wed Dec  9 17:01:08 MSK 2015
+Can't use an undefined value as a HASH reference at lib/App/HH/Api.pm line 26.
+Wed Dec  9 17:03:20 MSK 2015
+Wed Dec  9 17:03:57 MSK 2015
+Wed Dec  9 17:06:43 MSK 2015
+Wed Dec  9 17:12:51 MSK 2015
+Wed Dec  9 17:16:08 MSK 2015
+Wed Dec  9 17:19:06 MSK 2015
+Wed Dec  9 17:21:59 MSK 2015
+Wed Dec  9 17:25:03 MSK 2015
+Wed Dec  9 17:28:09 MSK 2015
+Wed Dec  9 17:31:07 MSK 2015
 Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 15:17:45 MSK 2015
-Wed Dec  9 15:22:02 MSK 2015
-Wed Dec  9 15:25:11 MSK 2015
-Wed Dec  9 15:27:47 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 15:28:26 MSK 2015
-Wed Dec  9 15:34:16 MSK 2015
-Wed Dec  9 15:37:02 MSK 2015
-Wed Dec  9 15:40:13 MSK 2015
-Wed Dec  9 15:43:14 MSK 2015
-Wed Dec  9 15:45:52 MSK 2015
-Wed Dec  9 15:48:47 MSK 2015
-Wed Dec  9 15:51:56 MSK 2015
-Wed Dec  9 15:54:56 MSK 2015
-Wed Dec  9 15:57:58 MSK 2015
-Wed Dec  9 16:01:16 MSK 2015
-Wed Dec  9 16:04:19 MSK 2015
-Wed Dec  9 16:07:14 MSK 2015
-Wed Dec  9 16:10:23 MSK 2015
-Wed Dec  9 16:13:00 MSK 2015
-Wed Dec  9 16:16:17 MSK 2015
-Wed Dec  9 16:19:23 MSK 2015
-Wed Dec  9 16:22:35 MSK 2015
-Wed Dec  9 16:25:09 MSK 2015
-Wed Dec  9 16:28:34 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 16:31:18 MSK 2015
-Wed Dec  9 16:35:02 MSK 2015
+Wed Dec  9 17:33:20 MSK 2015
+Wed Dec  9 17:34:16 MSK 2015
+Wed Dec  9 17:40:06 MSK 2015
+Wed Dec  9 17:43:03 MSK 2015
+Wed Dec  9 17:45:57 MSK 2015
+Wed Dec  9 17:49:00 MSK 2015
+Wed Dec  9 17:51:51 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'resume_title is NULL' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 17:54:54 MSK 2015
+Wed Dec  9 17:58:01 MSK 2015
+Wed Dec  9 18:01:25 MSK 2015
+Wed Dec  9 18:04:09 MSK 2015
+Wed Dec  9 18:06:23 MSK 2015
+Wed Dec  9 18:09:40 MSK 2015
+Wed Dec  9 18:12:37 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:15:47 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:18:50 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:21:37 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:24:29 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:27:08 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:30:15 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:33:35 MSK 2015
+DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
+Wed Dec  9 18:36:50 MSK 2015

@@ -15,7 +15,7 @@ my %status  = (
 </select>
 <input type="submit" value="Показать" />
 </form>
-       <div class="table-responsive table-bordered" style="margin-right:20px">
+       <div class="table-responsive" style="margin-right:20px">
          <table class="table tablesorter  table-bordered table-hover table-condensed table-bordered" id="myTable" >
            <thead>
              <tr>
@@ -44,14 +44,14 @@ my %status  = (
 	<td><%= $vacancy->{updated} %></td>
 	<td><a href="<%= url_for 'show_vacancy' %><%="$vacancy->{id}"%>"><%= $vacancy->{responses} || '' %></a></td>
 	<td>
-    <span ><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%> </span>
+   <span ><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%> </span>
     <%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : '' %></a>
   </td>
 	<td><%= $vacancy->{views} || ''%></td>
 	<td><%= $vacancy->{invitations} || ''%></td>
 	<td class="status_<%= $vacancy->{status} %>"><%= $status{$vacancy->{status}} %></td>
 </tr>
-% } 
+% }
 </tbody>
 </table>
 </div>

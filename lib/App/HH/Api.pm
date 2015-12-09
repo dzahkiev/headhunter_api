@@ -1,8 +1,5 @@
 package App::HH::Api;
-use warnings;
 use Mojo::UserAgent;
-use feature qw (say switch);
-use Data::Dumper;
 
 my $ua = Mojo::UserAgent->new;
 
@@ -31,8 +28,6 @@ sub get_negotiation {
 	my ( $class, $id, %header ) = @_;
 	$url = "https://api.hh.ru/negotiations/$id/messages";
 	my $res = $ua->get( $url => { %header } )->res->json->{items}->[0]->{text};
-	#$url = "https://api.hh.ru/negotiations/$id";
-	#$res->{created} = $ua->get( $url => { %header } )->res->json->{created_at};
 	return $res;
 }
 
