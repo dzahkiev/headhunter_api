@@ -22,10 +22,11 @@ my %status  = (
 <h4 class="sub-header">Список откликов</h4>
 <form action="" method="post">
 <select  name="status">
-  <option value = "invited" <%= 'selected' if $self->param('status') eq 'invited'%>>Приглашенные</option>
   <option value = "inbox" <%= 'selected' if $self->param('status') eq 'inbox'%>>Неразобранные</option>
+  <option value = "invited" <%= 'selected' if $self->param('status') eq 'invited'%>>Приглашенные</option>
   <option value = "hold" <%= 'selected' if $self->param('status') eq 'hold'%>>Подумать</option>
   <option value = "discarded" <%= 'selected' if $self->param('status') eq 'discarded'%>>Отсеянные</option>
+  <option value = "all" <%= 'selected' if $self->param('status') eq 'all'%>>Все</option>
 </select>
 <input type="submit" value="Показать" />
 </form>
@@ -34,11 +35,10 @@ my %status  = (
     <thead>
       <tr>
         <th>#</th>
-        <th>Фамилия</th>
-        <th>Имя</th>
-        <th>Отчество</th>
+        <th>ФИО</th>
         <th>Пол</th>
         <th>Возраст</th>
+        <th>Дата отклика</th>
         <th>Резюме</th>
         <th>Статус</th>
         <th>Примечание менеджера</th>
@@ -49,16 +49,14 @@ my %status  = (
 % for my $negotiation ( @$negotiations ) {
   <tr>
   <td><%= $i++ %></td>
-  <td><%= $negotiation->{last_name} %></td>
-  <td><%= $negotiation->{first_name} %></td>
-  <td><%= $negotiation->{middle_name} %></td>
+  <td><%= $negotiation->{last_name} %> <%= $negotiation->{first_name} %> <%= $negotiation->{middle_name} %></td>
   <td><%= $negotiation->{gender} %></td>
   <td><%= $negotiation->{age} %></td>
+  <td><%= $negotiation->{created} %></td>
   <td><a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></td>
   <td class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></td>
   <td class="<%= 'status' if  $negotiation->{local_status} %>">
-    <%= $negotiation->{local_status} %>
-     <span class="glyphicon glyphicon-pencil"></a>
+    <a href="<%= url_for 'show_negotiation'%><%=$negotiation->{id}%>"><%= $negotiation->{local_status} %><span class="glyphicon glyphicon-pencil"></a>
   </td>
 </tr>
 % } 

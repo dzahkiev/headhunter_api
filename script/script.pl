@@ -57,10 +57,11 @@ for my $manager (@$managers) {
 			for my $type_status ( qw /inbox hold invited discarded/ ) {
 				my $negotiations = App::HH::Api->get_negotiations( $type_status, $vacancy->{id}, %auth_header );
 				if ( @$negotiations ) {
-				my $sth_negotiation = $dbh->prepare("insert into negotiations set id = ?, vacancy_id = ?, first_name = ?, last_name = ?, middle_name = ?, gender = ?, age = ?, resume_title = ?, resume_url = ?, message = ?, status = ?
-				on duplicate key update  first_name = values(first_name), last_name = values(last_name), middle_name = values(middle_name), gender = values(gender), age = values(age), resume_title = values(resume_title), resume_url = values(resume_url), message = values(message), status = values(status)");
+				my $sth_negotiation = $dbh->prepare("insert into negotiations set id = ?, vacancy_id = ?, first_name = ?, last_name = ?, middle_name = ?, gender = ?, age = ?, resume_title = ?, resume_url = ?, message = ?, created = ?, status = ?
+				on duplicate key update  first_name = values(first_name), last_name = values(last_name), middle_name = values(middle_name), gender = values(gender), age = values(age), resume_title = values(resume_title), resume_url = values(resume_url), message = values(message), created = values(created), status = values(status)");
 				for my $negotiation ( @$negotiations ) {
-					my $message = App::HH::Api->get_negotiation( $negotiation->{id}, %auth_header );
+					my $res = App::HH::Api->get_negotiation( $negotiation->{id}, %auth_header );
+					$res->{created} =~ s/(\d{4}-\d{2}-\d{2}).(\d{2}:\d{2}:\d{2}).*$/$1 $2/;
 					my @values = (
 						$negotiation->{id},
 						$vacancy->{id},
@@ -71,7 +72,8 @@ for my $manager (@$managers) {
 						$negotiation->{resume}{age},
 						$negotiation->{resume}{title},
 						$negotiation->{resume}{alternate_url},
-						$message,
+						$res->{message},
+						$res->{created},
 						$type_status
 					);
 					$sth_negotiation->execute(@values);

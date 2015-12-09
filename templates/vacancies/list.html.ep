@@ -11,6 +11,7 @@ my %status  = (
 <select  name="status">
   <option value = "active" <%= 'selected' if $self->param('status') eq 'active'%>>Активные</option>
   <option value = "archived" <%= 'selected' if $self->param('status') eq 'archived'%>>Архивные</option>
+  <option value = "all" <%= 'selected' if $self->param('status') eq 'all'%>>Все</option>
 </select>
 <input type="submit" value="Показать" />
 </form>
@@ -40,10 +41,9 @@ my %status  = (
   <td><%= $vacancy->{manager_name} %></td>
 	<td><%= $vacancy->{created} %></td>
 	<td><%= $vacancy->{updated} %></td>
-	<td><a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>" class="responses"><%= $vacancy->{responses} || '' %></a></td>
+	<td><a href="<%= url_for 'show_vacancy' %><%="$vacancy->{id}"%>"><%= $vacancy->{responses} || '' %></a></td>
 	<td>
-    <a href = "<%= url_for 'show_negotiations' %><%= "/$vacancy->{id}" %>?status=inbox" class="new_responses">
-    <span style="color:green;"><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%> </span>
+    <span ><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%> </span>
     <%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : '' %></a>
   </td>
 	<td><%= $vacancy->{views} || ''%></td>
