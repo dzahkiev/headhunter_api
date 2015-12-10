@@ -6,7 +6,7 @@ my %status  = (
 );
 %>
 <div class="select-bar">
-<h2 class="sub-header">Вакансии</h2>
+<h3 class="sub-header">Вакансии</h3>
 <form action="" method="post" >
 <select  name="status" class="selectpicker show-tick" >
   <option value = "active" <%= 'selected' if $self->param('status') eq 'active'%>>Активные</option>
@@ -25,7 +25,7 @@ my %status  = (
                <th>Название вакансии</th>
                <th>Город</th>
                <th>Менеджер</th>
-               <th>Дата создания</th>
+               <th class="created">Дата создания</th>
                <th>Опубликовано</th>
                <th>Отклики</th>
                <th>Новые отклики</th>

@@ -13,9 +13,9 @@
   </head>
   	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
-        <div class="navbar-header">
+        <!-- <div class="navbar-header">
         <a class="navbar-brand" href="<%= url_for 'show_vacancies' %>">HeadHunter</a>
-        </div>
+        </div> -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<%= url_for 'logout' %>">Выйти</a></li>
@@ -27,18 +27,6 @@
         </div>
       </div>
     </div>
-<!--
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" style="margin-bottom:50%;">
-          <ul class="nav nav-sidebar menu" style = "margin-top:60px;">
-            <li class="active"><a href="<%= url_for 'show_vacancies' %>">Вакансии</a></li>
-            <li><a href="<%= url_for 'show_negotiations' %>">Отклики</a></li>
-          </ul>
-        </div>
--->
-
-
 <body>
 <div class="myContent">
 <%= content %>
@@ -52,7 +40,7 @@ $(document).ready(function()
         style: 'btn-info',
         size: 5
        });
-    } 
+  } 
 );
 
 </script>

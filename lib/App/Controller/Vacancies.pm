@@ -24,10 +24,10 @@ sub vacancy {
   my $query =  "select *, DATE_FORMAT(updated,'%d %M %Y, %H:%i') as updated from vacancies where id = ?";
   my $vacancy = App::DB->select($query, $self->param('ID'))->[0];
   if ($status eq 'all') {
-    $query = "select *, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ?";
+    $query = "select *, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ? order by date(created) desc";
   }
   else {
-    $query = "select *, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ? and status = ?";
+    $query = "select *, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ? and status = ? order by date(created) desc";
     push @param, $status;
   }
   my $negotiations = App::DB->select($query, @param);
