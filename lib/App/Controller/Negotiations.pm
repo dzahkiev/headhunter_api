@@ -20,6 +20,7 @@ sub list {
   push @params, $self->param('ID');
   }
   my $negotiations = App::DB->select( $query, @params );
+  $self->session('back_url' => $self->req->url->to_string);
   return $self->render( negotiations => $negotiations);
 }
 

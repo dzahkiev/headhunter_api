@@ -31,6 +31,7 @@ sub vacancy {
     push @param, $status;
   }
   my $negotiations = App::DB->select($query, @param);
+  $self->session('back_url' => $self->req->url->to_string);
   return $self->render( vacancy => $vacancy, negotiations => $negotiations);
 }
 

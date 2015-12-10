@@ -33,7 +33,7 @@ my %status  = (
 %}
 <br>
 <p>Текущий статус: <span class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></span></p>
-<p>Примечание менеджера: 
+<p>Примечание HR-менеджера: 
     % if ( $self->param('edit') ) {
     <form action="<%= url_for 'update_negotiation' %>" method = "post">
     <input type="text" value="<%= $negotiation->{local_status} %>" name = "local_status">
@@ -44,3 +44,4 @@ my %status  = (
      <span class="glyphicon glyphicon-pencil"></span></a>
     %}
 </p>
+<a href="<%= $self->session('back_url') %>">Назад к списку...</a>
