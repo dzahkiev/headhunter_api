@@ -84,7 +84,7 @@ for my $manager (@$managers) {
 	}
 }
 
-$dbh->do("delete from negotiations where vacancy_id in (select id from vacancies where status = 'hidden' or resume_url is NULL");
+$dbh->do("delete from negotiations where vacancy_id in (select id from vacancies where status = 'hidden') or resume_url is NULL");
 $dbh->do("delete from vacancies where status = 'hidden'");
 
 

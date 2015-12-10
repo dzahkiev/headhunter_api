@@ -7,8 +7,6 @@ my %status  = (
   discarded =>'отказано',
 );
 %>
-<br><br>
-<div class="table-responsive" style="margin-right:20px">
 <h3 class="sub-header"><%= $vacancy->{name} %></h3>
 <p><%= $vacancy->{region} %></p>
 <hr>
@@ -21,26 +19,30 @@ my %status  = (
 <p><b>Менеджер: <%= $vacancy->{manager_name} %></b> | <small> Количесво просмотров: <%= $vacancy->{views} || '-'%></small></p>
 <br>
 <h4 class="sub-header">Список откликов</h4>
-<form action="" method="post">
-<select  name="status">
+<div>
+<form action="" method="post" class="form-group" >
+<select  name="status" class="selectpicker show-tick" >
   <option value = "inbox" <%= 'selected' if $self->param('status') eq 'inbox'%>>Неразобранные</option>
   <option value = "invited" <%= 'selected' if $self->param('status') eq 'invited'%>>Приглашенные</option>
   <option value = "hold" <%= 'selected' if $self->param('status') eq 'hold'%>>Подумать</option>
   <option value = "discarded" <%= 'selected' if $self->param('status') eq 'discarded'%>>Отклоненные</option>
   <option value = "all" <%= 'selected' if $self->param('status') eq 'all'%>>Все</option>
 </select>
-<input type="submit" value="Показать" />
+<button type="submit" class="btn">Показать</button>
 </form>
+</div>
 % if ( defined @$negotiations) {
-    <table class="table tablesorter table-striped table-bordered table-hover table-condensed table-bordered" id="myTable">
+    <hr>
+    <table class="table table-striped table-condensed table-hover tablesorter" id="myTable">
     <thead>
-      <tr>
+      <tr style="white-space:pre;">
         <th>#</th>
         <th>ФИО</th>
         <th>Пол</th>
         <th>Возраст</th>
-        <th>Дата отклика</th>
         <th>Резюме</th>
+        <th>Сопров. письмо</th>
+        <th>Дата отклика</th>
         <th>Статус</th>
         <th>Примечание менеджера</th>
       </tr>
@@ -50,11 +52,20 @@ my %status  = (
 % for my $negotiation ( @$negotiations ) {
   <tr>
   <td><%= $i++ %></td>
-  <td><%= $negotiation->{last_name} %> <%= $negotiation->{first_name} %> <%= $negotiation->{middle_name} %></td>
-  <td><%= $negotiation->{gender} %></td>
+  <td>
+  <a href="<%= url_for 'show_negotiation'%><%=$negotiation->{id}%>"><%= $negotiation->{last_name} %> <%= $negotiation->{first_name} %> <%= $negotiation->{middle_name} %></a>
+  </td>
+  <td><%= substr($negotiation->{gender}, 0, 1) %></td>
   <td><%= $negotiation->{age} %></td>
-  <td><%= $negotiation->{created} %></td>
-  <td><a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></td>
+  <td><a href = "<%= $negotiation->{resume_url} %>"><%= substr($negotiation->{resume_title}, 0, 30) %><%= '...' if (length $negotiation->{resume_title} > 30)%></a></td>
+  <td>
+  % if ($negotiation->{message}) {
+  <span class="glyphicon glyphicon-ok" style="color:green;"></span>
+  %} else {
+  <span class="glyphicon glyphicon-minus" style="color:#ddd;"></span>
+  %}
+  </td>
+  <td style="white-space:pre;"><%= $negotiation->{created} %></td>
   <td class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></td>
   <td class="<%= 'status' if  $negotiation->{local_status} %>">
     <a href="<%= url_for 'show_negotiation'%><%=$negotiation->{id}%>"><%= $negotiation->{local_status} %><span class="glyphicon glyphicon-pencil"></a>
@@ -67,4 +78,3 @@ my %status  = (
 else { %>
   Нет данных для отображения
 %}
-</div>

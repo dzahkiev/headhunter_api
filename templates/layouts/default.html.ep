@@ -5,8 +5,11 @@
  	 <meta charset="utf8">
   	<link rel='stylesheet' href='/css/bootstrap.min.css' type='text/css' media='all'>
     <link rel='stylesheet' href='/css/styles.css' type='text/css' media='all'>
+    <link rel='stylesheet' href='/css/bootstrap-select.css' type='text/css' media='all'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+    <script src="/js/bootstrap-select.js"></script>
   </head>
   	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
@@ -17,28 +20,41 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<%= url_for 'logout' %>">Выйти</a></li>
           </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" style="margin-bottom:50%;">
-          <ul class="nav nav-sidebar" style = "margin-top:30px;">
-            <li class="active"><a href="#"></a></li>
+           <ul class="nav navbar-nav navbar-left">
             <li><a href="<%= url_for 'show_vacancies' %>">Вакансии</a></li>
             <li><a href="<%= url_for 'show_negotiations' %>">Отклики</a></li>
           </ul>
+        </div>
       </div>
+    </div>
+<!--
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" style="margin-bottom:50%;">
+          <ul class="nav nav-sidebar menu" style = "margin-top:60px;">
+            <li class="active"><a href="<%= url_for 'show_vacancies' %>">Вакансии</a></li>
+            <li><a href="<%= url_for 'show_negotiations' %>">Отклики</a></li>
+          </ul>
+        </div>
+-->
+
 
 <body>
+<div class="myContent">
 <%= content %>
+</div>
 <script type="text/javascript">
 $(document).ready(function() 
     { 
         $("#myTable").tablesorter(); 
+        $(".selectpicker").selectpicker();
+        $('.selectpicker').selectpicker({
+        style: 'btn-info',
+        size: 5
+       });
     } 
 );
+
 </script>
 </body>
 </html>

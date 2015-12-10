@@ -1,5 +1,8 @@
 .table th {
  }
+.table td a{
+
+}
 .responses {
   color: green;
   }
@@ -39,6 +42,50 @@
 }
 #myTable{
 }
+.menu {
+  font-size: 16px;
+  margin-right: 20px;
+}
+.menu li{
+  border-bottom: solid 1px #eee;
+}
+.menu a{
+  color: #333;
+}
+.sub-header {
+  color:green;
+}
+.resume-name {
+  color:#222;
+}
+.message-container {
+  text-indent: 1.5em;
+  width: 600px;
+  border: solid #eee 1px;
+  border-radius: 10px;
+  padding: 10px;
+  color:#444;
+}
+.navbar {
+background-color: #222;
+z-index: 9999;
+}
+.select-bar {
+  position:fixed;
+  background-color: white;
+  width:100%;
+  margin-top:-20px;
+  z-index: 999;
+}
+
+.myContent {
+  margin: 70px 70px 70px 90px;
+}
+.selectpicker{
+}
+.table-padding {
+  padding-top: 120px;
+}
 table.tablesorter thead tr .header {
   background-image: url(../img/bg.gif);
   background-repeat: no-repeat;
@@ -51,3 +98,6 @@ table.tablesorter thead tr .headerSortUp {
 table.tablesorter thead tr .headerSortDown {
   background-image: url(../img/desc.gif);
 }
+
+
+

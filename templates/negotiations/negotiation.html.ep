@@ -7,9 +7,7 @@ my %status  = (
   discarded =>'отказано',
 );
 %>
-<br><br>
-<h2 class="sub-header"><%= $negotiation->{first_name} %>  <%= $negotiation->{last_name} %> <%= $negotiation->{middle_name} %></h2>
-<div class="table-responsive">
+<h3 class="sub-header resume-name"><%= $negotiation->{first_name} %>  <%= $negotiation->{last_name} %> <%= $negotiation->{middle_name} %></h3>
 <p>Пол: <%= $negotiation->{gender} %></p>
 <p>Возраст: <%= $negotiation->{age} %></p>
 <p>Резюме: <a href = "<%= $negotiation->{resume_url} %>"><%= $negotiation->{resume_title} %></a></p>
@@ -17,21 +15,23 @@ my %status  = (
 % if ($negotiation->{message}) {
 <b>Текст сопроводительного письма:</b>
 <br>
-<p><%= $negotiation->{message} %></p>
+<div class="message-container"><%= $negotiation->{message} %></div>
 %}
 <br>
 <p><small>Отклик оставлен: <%= $negotiation->{created} %></small></p>
 <hr>
 %if ( ($negotiation->{status} eq 'inbox') || ($negotiation->{status} cmp 'discarded') ) {
 <form action="<%= url_for 'negotiation_update_status'%>" method="post" >
+  <p>Поменять статус hh.ru на:</p>
   <select  name="set_status" class="selectpicker">
   <option value = "invited">Пригласить</option>
   <option value = "hold">Подумать</option>
   <option value = "discarded">Отказать</option>
 </select>
-<input type="submit" value="ok" />
+<button type="submit" class="btn">Ok</button>
 </form>
 %}
+<br>
 <p>Текущий статус: <span class="<%=$negotiation->{status} %>"><%= $status{$negotiation->{status}} %></span></p>
 <p>Примечание менеджера: 
     % if ( $self->param('edit') ) {
@@ -44,4 +44,3 @@ my %status  = (
      <span class="glyphicon glyphicon-pencil"></span></a>
     %}
 </p>
-<div>

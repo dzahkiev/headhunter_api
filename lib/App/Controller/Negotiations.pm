@@ -4,18 +4,18 @@ use base 'Mojolicious::Controller';
 sub list {
   my $self = shift;
   my @params;
-  my $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations order by created desc"; 
+  my $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations order by date(created) desc"; 
   my $status = $self->param('status') || 'inbox';
   unless ($self->param('status') eq 'all') {
-    $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations where status in (?) order by created desc";
+    $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where status in (?) order by date(created) desc";
     push @params, $status;
   } 
   if ( $self->param('ID') ) {
     unless ($self->param('status') eq 'all') {
-      $query = "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations where vacancy_id = ? order by created desc";
+      $query = "select *, (select name from vacancies where id = vacancy_id) as vacancy, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ? order by date(created) desc";
     }
     else {
-      $query = "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations where status in (?) and vacancy_id = ? order by created desc";
+      $query = "select *, (select name from vacancies where id = vacancy_id) as vacancy, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where status in (?) and vacancy_id = ? order by date(created) desc";
     }
   push @params, $self->param('ID');
   }
@@ -25,7 +25,7 @@ sub list {
 
 sub negotiation {
   my $self = shift;
-  my $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy from negotiations where id = ?";
+  my $query =  "select *, (select name from vacancies where id = vacancy_id) as vacancy, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where id = ?";
   my $negotiation = App::DB->select( $query, $self->param('nID') )->[0];
   return $self->render( negotiation => $negotiation);
 }

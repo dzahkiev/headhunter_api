@@ -5,18 +5,20 @@ my %status  = (
   archived =>'архивная',
 );
 %>
-<br><br>
+<div class="select-bar">
 <h2 class="sub-header">Вакансии</h2>
-<form action="" method="post">
-<select  name="status">
+<form action="" method="post" >
+<select  name="status" class="selectpicker show-tick" >
   <option value = "active" <%= 'selected' if $self->param('status') eq 'active'%>>Активные</option>
   <option value = "archived" <%= 'selected' if $self->param('status') eq 'archived'%>>Архивные</option>
   <option value = "all" <%= 'selected' if $self->param('status') eq 'all'%>>Все</option>
 </select>
-<input type="submit" value="Показать" />
+<button type="submit" class="btn">Показать</button>
 </form>
-       <div class="table-responsive" style="margin-right:20px">
-         <table class="table tablesorter  table-bordered table-hover table-condensed table-bordered" id="myTable" >
+<hr>
+</div>
+       <div class="table-responsive table-padding" >
+          <table class="table table-striped table-condensed table-hover tablesorter" id="myTable">
            <thead>
              <tr>
                <th>#</th>
@@ -38,7 +40,7 @@ my %status  = (
 	<tr>
 	<td><%= $i++ %></td>
 	<td><a href="<%= url_for 'show_vacancy' %><%="$vacancy->{id}"%>"><%= $vacancy->{name} %></a></td>
-	<td><%= $vacancy->{region} %></td>
+	<td style="white-space:pre;"><%= $vacancy->{region} %></td>
   <td><%= $vacancy->{manager_name} %></td>
 	<td><%= $vacancy->{created} %></td>
 	<td><%= $vacancy->{updated} %></td>

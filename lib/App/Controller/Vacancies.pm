@@ -3,11 +3,11 @@ use base 'Mojolicious::Controller';
 
 sub list {
 	my $self = shift;
-	my $query =  "select *, (select count(*) from negotiations where status = 'inbox' and vacancy_id = vacancies.id ) as count_responses from vacancies where status = ? order by updated desc";
+	my $query =  "select *, (select count(*) from negotiations where status = 'inbox' and vacancy_id = vacancies.id ) as count_responses, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created, DATE_FORMAT(updated,'%d %M %Y, %H:%i') as updated from vacancies where status = ? order by date(updated) desc";
 	my $status = $self->param('status') || 'active';
   my $vacancies;
   if ($self->param('status') eq 'all') {
-    $query =  "select *, (select count(*) from negotiations where status = 'inbox' and vacancy_id = vacancies.id ) as count_responses from vacancies order by updated desc";
+    $query =  "select *, (select count(*) from negotiations where status = 'inbox' and vacancy_id = vacancies.id ) as count_responses, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created, DATE_FORMAT(updated,'%d %M %Y, %H:%i') as updated from vacancies order by date(updated) desc";
     $vacancies = App::DB->select($query);
   }
   else {
@@ -21,13 +21,13 @@ sub vacancy {
   my @param;
   my $status = $self->param('status')||'inbox';
   push @param, $self->param('ID');
-  my $query =  "select * from vacancies where id = ? order by updated desc";
+  my $query =  "select *, DATE_FORMAT(updated,'%d %M %Y, %H:%i') as updated from vacancies where id = ?";
   my $vacancy = App::DB->select($query, $self->param('ID'))->[0];
   if ($status eq 'all') {
-    $query = "select * from negotiations where vacancy_id = ? order by created desc";
+    $query = "select *, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ?";
   }
   else {
-    $query = "select * from negotiations where vacancy_id = ? and status = ? order by created desc";
+    $query = "select *, DATE_FORMAT(created,'%d %M %Y, %H:%i') as created from negotiations where vacancy_id = ? and status = ?";
     push @param, $status;
   }
   my $negotiations = App::DB->select($query, @param);

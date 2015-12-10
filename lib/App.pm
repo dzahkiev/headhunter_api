@@ -12,8 +12,8 @@ sub startup {
 	$r->get('/form')		->to('auth#form')	->name('auth_form');
 	
 	my $auth = $r->under( '/' )			->to('auth#auth')			->name('check_auth');
-	$auth->get('/')					->to('vacancies#list')			->name('show_vacancies');
-	$auth->post('/')					->to('vacancies#list')			->name('show_vacancies');
+	$auth->get('/')					->to('vacancies#list')			->name('main_page');
+	$auth->post('/')					->to('vacancies#list')			->name('main_page');
 	$auth->get('/vacancies')			->to('vacancies#list')			->name('show_vacancies');
 	$auth->post('/vacancies')			->to('vacancies#list')			->name('show_vacancies');
 	$auth->get('/vacancies/:ID')			->to('vacancies#vacancy')			->name('show_vacancy');

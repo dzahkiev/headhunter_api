@@ -8,6 +8,7 @@ sub db_connect {
 	$dbh = DBI->connect( sprintf( "DBI:mysql:dbname=%s;host=%s;port=%s", @_ ) ) or die "Couldn't connect!";
 	$dbh->{'mysql_enable_utf8'} = 1;
 	$dbh->do('SET NAMES utf8');
+	$dbh->do("set lc_time_names='ru_RU'");
 	return $dbh;
 }
 
