@@ -9,6 +9,7 @@ my $dbh = DBI->connect( sprintf( "DBI:mysql:dbname=test;host=localhost;port=3306
 open FILE, '<', '../conf.txt';
 chomp (my @lines = <FILE>);
 close FILE;
+exit unless (@lines);
 my $access;
 $access->{access_token}  = $lines[0];
 $access->{refresh_token} = $lines[1];

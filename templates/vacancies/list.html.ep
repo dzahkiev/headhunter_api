@@ -47,7 +47,7 @@ my %status  = (
 	<td><a href="<%= url_for 'show_vacancy' %><%="$vacancy->{id}"%>"><%= $vacancy->{responses} || '' %></a></td>
 	<td>
    <span ><%= $vacancy->{count_responses} ? $vacancy->{count_responses} : ''%> </span>
-    <%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : '' %></a>
+    <span class="new_responses"><%= ($vacancy->{unread_responses}) ? "+$vacancy->{unread_responses}" : '' %></span>
   </td>
 	<td><%= $vacancy->{views} || ''%></td>
 	<td><%= $vacancy->{invitations} || ''%></td>

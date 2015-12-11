@@ -4,13 +4,11 @@ use App::DB;
 
 sub startup {
 	my $self = shift;
-
 	my $r = $self->routes;
 	$r->get('/auth')		->to('auth#callback')	->name('auth_user');
 	$r->get('/login')		->to('auth#create')	->name('login');
 	$r->get('/logout')		->to('auth#delete')	->name('logout');
 	$r->get('/form')		->to('auth#form')	->name('auth_form');
-	
 	my $auth = $r->under( '/' )			->to('auth#auth')			->name('check_auth');
 	$auth->get('/')					->to('vacancies#list')			->name('main_page');
 	$auth->post('/')				->to('vacancies#list')			->name('main_page');

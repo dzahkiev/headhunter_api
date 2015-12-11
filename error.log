@@ -1,260 +1,163 @@
-Wed Dec  9 16:40:41 MSK 2015
-Wed Dec  9 16:43:11 MSK 2015
-Wed Dec  9 16:46:07 MSK 2015
-Wed Dec  9 16:49:16 MSK 2015
-Wed Dec  9 16:51:58 MSK 2015
-Wed Dec  9 16:55:35 MSK 2015
-Wed Dec  9 16:58:14 MSK 2015
-Wed Dec  9 17:01:08 MSK 2015
-Can't use an undefined value as a HASH reference at lib/App/HH/Api.pm line 26.
-Wed Dec  9 17:03:20 MSK 2015
-Wed Dec  9 17:03:57 MSK 2015
-Wed Dec  9 17:06:43 MSK 2015
-Wed Dec  9 17:12:51 MSK 2015
-Wed Dec  9 17:16:08 MSK 2015
-Wed Dec  9 17:19:06 MSK 2015
-Wed Dec  9 17:21:59 MSK 2015
-Wed Dec  9 17:25:03 MSK 2015
-Wed Dec  9 17:28:09 MSK 2015
-Wed Dec  9 17:31:07 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 17:33:20 MSK 2015
-Wed Dec  9 17:34:16 MSK 2015
-Wed Dec  9 17:40:06 MSK 2015
-Wed Dec  9 17:43:03 MSK 2015
-Wed Dec  9 17:45:57 MSK 2015
-Wed Dec  9 17:49:00 MSK 2015
-Wed Dec  9 17:51:51 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'resume_title is NULL' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 17:54:54 MSK 2015
-Wed Dec  9 17:58:01 MSK 2015
-Wed Dec  9 18:01:25 MSK 2015
-Wed Dec  9 18:04:09 MSK 2015
-Wed Dec  9 18:06:23 MSK 2015
-Wed Dec  9 18:09:40 MSK 2015
-Wed Dec  9 18:12:37 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:15:47 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:18:50 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:21:37 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:24:29 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:27:08 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:30:15 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:33:35 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:36:50 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:39:15 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:42:31 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:46:03 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 18:46:13 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 18:48:04 MSK 2015
-DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 at ./script/script.pl line 87.
-Wed Dec  9 18:54:12 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Wed Dec  9 18:57:18 MSK 2015
-Wed Dec  9 19:00:27 MSK 2015
-Wed Dec  9 19:03:10 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 10:08:21 MSK 2015
-Thu Dec 10 10:12:39 MSK 2015
-Thu Dec 10 10:15:44 MSK 2015
-Thu Dec 10 10:19:03 MSK 2015
-Thu Dec 10 10:22:05 MSK 2015
-Thu Dec 10 10:24:42 MSK 2015
-Thu Dec 10 10:28:22 MSK 2015
-Thu Dec 10 10:31:21 MSK 2015
-Thu Dec 10 10:34:09 MSK 2015
-Thu Dec 10 10:36:41 MSK 2015
-Thu Dec 10 10:39:39 MSK 2015
-Thu Dec 10 10:42:54 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 10:43:45 MSK 2015
-Thu Dec 10 10:49:01 MSK 2015
-Thu Dec 10 10:52:12 MSK 2015
-Thu Dec 10 10:55:41 MSK 2015
-Thu Dec 10 10:58:07 MSK 2015
-Thu Dec 10 11:00:57 MSK 2015
-Thu Dec 10 11:04:13 MSK 2015
-Thu Dec 10 11:07:16 MSK 2015
-Thu Dec 10 11:10:30 MSK 2015
-Thu Dec 10 11:13:12 MSK 2015
-Thu Dec 10 11:16:08 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 11:18:59 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 11:21:39 MSK 2015
-Thu Dec 10 11:25:35 MSK 2015
-Thu Dec 10 11:28:12 MSK 2015
-Thu Dec 10 11:31:21 MSK 2015
-Thu Dec 10 11:33:55 MSK 2015
-Thu Dec 10 11:37:12 MSK 2015
-Thu Dec 10 11:40:20 MSK 2015
-Thu Dec 10 11:43:34 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 11:43:51 MSK 2015
-Thu Dec 10 11:49:15 MSK 2015
-Thu Dec 10 11:51:56 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 11:54:46 MSK 2015
-Thu Dec 10 11:55:26 MSK 2015
-Thu Dec 10 11:58:28 MSK 2015
-Thu Dec 10 12:04:33 MSK 2015
-Thu Dec 10 12:07:51 MSK 2015
-Thu Dec 10 12:10:54 MSK 2015
-Thu Dec 10 12:13:20 MSK 2015
-Thu Dec 10 12:16:32 MSK 2015
-Thu Dec 10 12:19:27 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 12:20:56 MSK 2015
-Thu Dec 10 12:25:13 MSK 2015
-Thu Dec 10 12:28:03 MSK 2015
-Thu Dec 10 12:31:08 MSK 2015
-Thu Dec 10 12:33:57 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 12:33:59 MSK 2015
-Thu Dec 10 12:37:15 MSK 2015
-Thu Dec 10 12:42:51 MSK 2015
-Thu Dec 10 12:45:54 MSK 2015
-Thu Dec 10 12:49:15 MSK 2015
-Thu Dec 10 12:52:09 MSK 2015
-Thu Dec 10 12:55:02 MSK 2015
-Thu Dec 10 12:57:56 MSK 2015
-Thu Dec 10 13:01:06 MSK 2015
-Thu Dec 10 13:04:20 MSK 2015
-Thu Dec 10 13:07:26 MSK 2015
-Thu Dec 10 13:10:37 MSK 2015
-Thu Dec 10 13:14:00 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 13:16:29 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 13:19:36 MSK 2015
-Thu Dec 10 13:19:41 MSK 2015
-Thu Dec 10 13:25:22 MSK 2015
-Thu Dec 10 13:28:02 MSK 2015
-Thu Dec 10 13:31:12 MSK 2015
-Thu Dec 10 13:34:12 MSK 2015
-Thu Dec 10 13:37:18 MSK 2015
-Thu Dec 10 13:40:25 MSK 2015
-Thu Dec 10 13:43:33 MSK 2015
-Thu Dec 10 13:46:26 MSK 2015
-Thu Dec 10 13:48:52 MSK 2015
-Thu Dec 10 13:52:13 MSK 2015
-Thu Dec 10 13:54:57 MSK 2015
+Fri Dec 11 10:45:49 MSK 2015
+Fri Dec 11 10:48:44 MSK 2015
+Fri Dec 11 10:51:52 MSK 2015
+Fri Dec 11 10:54:38 MSK 2015
+Fri Dec 11 10:57:38 MSK 2015
+Fri Dec 11 11:00:45 MSK 2015
+Fri Dec 11 11:03:53 MSK 2015
+Fri Dec 11 11:06:53 MSK 2015
+Fri Dec 11 11:10:17 MSK 2015
+Fri Dec 11 11:13:26 MSK 2015
+Fri Dec 11 11:15:52 MSK 2015
+Fri Dec 11 11:18:32 MSK 2015
+Fri Dec 11 11:21:53 MSK 2015
+Fri Dec 11 11:24:41 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 11:27:35 MSK 2015
+Fri Dec 11 11:27:43 MSK 2015
+Fri Dec 11 11:30:30 MSK 2015
+Fri Dec 11 11:36:42 MSK 2015
+Fri Dec 11 11:39:46 MSK 2015
+Fri Dec 11 11:42:54 MSK 2015
+Fri Dec 11 11:45:58 MSK 2015
+Fri Dec 11 11:48:47 MSK 2015
+Fri Dec 11 11:52:05 MSK 2015
+Fri Dec 11 11:55:06 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 11:56:29 MSK 2015
+Fri Dec 11 12:01:10 MSK 2015
+Fri Dec 11 12:04:01 MSK 2015
+Fri Dec 11 12:06:00 MSK 2015
+Fri Dec 11 12:07:02 MSK 2015
+Fri Dec 11 12:09:38 MSK 2015
+Fri Dec 11 12:15:42 MSK 2015
+Fri Dec 11 12:18:54 MSK 2015
+Fri Dec 11 12:21:53 MSK 2015
+Fri Dec 11 12:25:18 MSK 2015
+Fri Dec 11 12:28:33 MSK 2015
+Fri Dec 11 12:31:30 MSK 2015
+Fri Dec 11 12:34:12 MSK 2015
+Fri Dec 11 12:36:45 MSK 2015
+Fri Dec 11 12:40:18 MSK 2015
+Fri Dec 11 12:42:47 MSK 2015
+Fri Dec 11 12:45:41 MSK 2015
+Fri Dec 11 12:48:30 MSK 2015
+Fri Dec 11 12:51:18 MSK 2015
+Fri Dec 11 12:54:13 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 12:56:07 MSK 2015
+Fri Dec 11 13:00:34 MSK 2015
+Fri Dec 11 13:03:45 MSK 2015
+Fri Dec 11 13:07:12 MSK 2015
+Fri Dec 11 13:10:21 MSK 2015
+Fri Dec 11 13:13:06 MSK 2015
+Fri Dec 11 13:15:43 MSK 2015
 Can't use an undefined value as a HASH reference at lib/App/HH/Api.pm line 30.
-Thu Dec 10 14:30:59 MSK 2015
+Can't use an undefined value as a HASH reference at lib/App/HH/Api.pm line 30.
+Fri Dec 11 13:57:33 MSK 2015
+Fri Dec 11 13:57:33 MSK 2015
+Fri Dec 11 14:06:21 MSK 2015
+Fri Dec 11 14:09:43 MSK 2015
+Fri Dec 11 14:12:35 MSK 2015
+Fri Dec 11 14:15:28 MSK 2015
+Fri Dec 11 14:18:23 MSK 2015
+Fri Dec 11 14:21:37 MSK 2015
+Fri Dec 11 14:24:42 MSK 2015
+Fri Dec 11 14:27:39 MSK 2015
+Fri Dec 11 14:30:19 MSK 2015
+Fri Dec 11 14:33:44 MSK 2015
+Fri Dec 11 14:36:52 MSK 2015
+Fri Dec 11 14:39:49 MSK 2015
+Fri Dec 11 14:42:43 MSK 2015
+Fri Dec 11 14:45:22 MSK 2015
+Fri Dec 11 14:48:16 MSK 2015
 Can't use an undefined value as a HASH reference at lib/App/HH/Api.pm line 23.
-Thu Dec 10 14:31:00 MSK 2015
-Thu Dec 10 14:39:57 MSK 2015
-Thu Dec 10 14:43:03 MSK 2015
-Thu Dec 10 14:46:13 MSK 2015
-Thu Dec 10 14:49:40 MSK 2015
-Thu Dec 10 14:52:00 MSK 2015
-Thu Dec 10 14:54:57 MSK 2015
-Thu Dec 10 14:57:58 MSK 2015
-Thu Dec 10 15:00:45 MSK 2015
-Thu Dec 10 15:04:06 MSK 2015
-Thu Dec 10 15:07:17 MSK 2015
-Thu Dec 10 15:10:16 MSK 2015
-Thu Dec 10 15:13:20 MSK 2015
-Thu Dec 10 15:16:19 MSK 2015
-Thu Dec 10 15:19:23 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 15:20:42 MSK 2015
-Thu Dec 10 15:24:47 MSK 2015
-Thu Dec 10 15:27:39 MSK 2015
-Thu Dec 10 15:30:56 MSK 2015
-Thu Dec 10 15:34:30 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 15:36:11 MSK 2015
-Thu Dec 10 15:37:39 MSK 2015
-Thu Dec 10 15:40:04 MSK 2015
-Thu Dec 10 15:45:41 MSK 2015
-Thu Dec 10 15:49:08 MSK 2015
-Thu Dec 10 15:52:08 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 15:54:14 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 15:55:03 MSK 2015
-Thu Dec 10 15:55:06 MSK 2015
-Thu Dec 10 16:04:05 MSK 2015
-Thu Dec 10 16:07:12 MSK 2015
-Thu Dec 10 16:10:20 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 16:10:40 MSK 2015
-Thu Dec 10 16:15:33 MSK 2015
-Thu Dec 10 16:18:35 MSK 2015
-Thu Dec 10 16:21:31 MSK 2015
-Thu Dec 10 16:24:36 MSK 2015
-Thu Dec 10 16:27:58 MSK 2015
-Thu Dec 10 16:31:05 MSK 2015
-Thu Dec 10 16:34:28 MSK 2015
-Thu Dec 10 16:37:31 MSK 2015
-Thu Dec 10 16:39:53 MSK 2015
-Thu Dec 10 16:42:59 MSK 2015
-Thu Dec 10 16:46:32 MSK 2015
-Thu Dec 10 16:49:10 MSK 2015
-Thu Dec 10 16:51:55 MSK 2015
-Thu Dec 10 16:55:13 MSK 2015
-Thu Dec 10 16:58:19 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 16:58:40 MSK 2015
-Thu Dec 10 17:01:19 MSK 2015
-Thu Dec 10 17:06:44 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 17:07:15 MSK 2015
-Thu Dec 10 17:12:21 MSK 2015
-Thu Dec 10 17:15:40 MSK 2015
-Thu Dec 10 17:18:48 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 17:21:04 MSK 2015
-Thu Dec 10 17:21:43 MSK 2015
-Thu Dec 10 17:27:22 MSK 2015
-Thu Dec 10 17:30:42 MSK 2015
-Thu Dec 10 17:33:54 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 17:34:15 MSK 2015
-Thu Dec 10 17:39:26 MSK 2015
-Thu Dec 10 17:42:27 MSK 2015
-Thu Dec 10 17:45:34 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 17:47:25 MSK 2015
-Thu Dec 10 17:52:08 MSK 2015
-Can't use an undefined value as an ARRAY reference at ./script/script.pl line 59.
-Thu Dec 10 17:52:31 MSK 2015
-Thu Dec 10 17:57:21 MSK 2015
-Thu Dec 10 18:00:14 MSK 2015
-Thu Dec 10 18:03:28 MSK 2015
-Thu Dec 10 18:06:38 MSK 2015
-Thu Dec 10 18:09:51 MSK 2015
-Thu Dec 10 18:13:12 MSK 2015
-Thu Dec 10 18:16:12 MSK 2015
-Thu Dec 10 18:18:54 MSK 2015
-Thu Dec 10 18:21:31 MSK 2015
-Thu Dec 10 18:24:38 MSK 2015
-Thu Dec 10 18:27:34 MSK 2015
-Thu Dec 10 18:30:12 MSK 2015
-Thu Dec 10 18:33:56 MSK 2015
-Thu Dec 10 18:36:49 MSK 2015
-Thu Dec 10 18:39:17 MSK 2015
-Thu Dec 10 18:41:50 MSK 2015
-Thu Dec 10 18:45:29 MSK 2015
-Thu Dec 10 18:48:22 MSK 2015
-Thu Dec 10 18:51:06 MSK 2015
-Thu Dec 10 18:54:10 MSK 2015
-Thu Dec 10 18:57:37 MSK 2015
-Thu Dec 10 19:00:38 MSK 2015
-Thu Dec 10 19:03:54 MSK 2015
-Thu Dec 10 19:06:33 MSK 2015
-Thu Dec 10 19:09:29 MSK 2015
-Thu Dec 10 19:12:50 MSK 2015
+Fri Dec 11 14:50:40 MSK 2015
+Fri Dec 11 14:54:18 MSK 2015
+Fri Dec 11 14:57:09 MSK 2015
+Fri Dec 11 15:00:04 MSK 2015
+Fri Dec 11 15:03:48 MSK 2015
+Fri Dec 11 15:07:01 MSK 2015
+Fri Dec 11 15:09:52 MSK 2015
+Fri Dec 11 15:12:49 MSK 2015
+Fri Dec 11 15:15:45 MSK 2015
+Fri Dec 11 15:19:03 MSK 2015
+Fri Dec 11 15:21:45 MSK 2015
+Fri Dec 11 15:24:27 MSK 2015
+Fri Dec 11 15:27:37 MSK 2015
+Fri Dec 11 15:30:27 MSK 2015
+Fri Dec 11 15:33:27 MSK 2015
+Fri Dec 11 15:37:00 MSK 2015
+Fri Dec 11 15:40:10 MSK 2015
+Fri Dec 11 15:42:59 MSK 2015
+Fri Dec 11 15:46:38 MSK 2015
+Fri Dec 11 15:49:35 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 15:51:35 MSK 2015
+Fri Dec 11 15:52:40 MSK 2015
+Fri Dec 11 15:54:55 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 15:59:06 MSK 2015
+Fri Dec 11 16:03:35 MSK 2015
+Fri Dec 11 16:06:40 MSK 2015
+Fri Dec 11 16:09:28 MSK 2015
+Fri Dec 11 16:13:00 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 16:13:38 MSK 2015
+Fri Dec 11 16:19:02 MSK 2015
+Fri Dec 11 16:21:37 MSK 2015
+Fri Dec 11 16:24:03 MSK 2015
+Fri Dec 11 16:27:42 MSK 2015
+Fri Dec 11 16:30:50 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 16:33:22 MSK 2015
+Fri Dec 11 16:33:38 MSK 2015
+Fri Dec 11 16:36:20 MSK 2015
+Fri Dec 11 16:42:32 MSK 2015
+Fri Dec 11 16:46:07 MSK 2015
+Fri Dec 11 16:48:59 MSK 2015
+Fri Dec 11 16:52:09 MSK 2015
+Fri Dec 11 16:55:09 MSK 2015
+Fri Dec 11 16:58:30 MSK 2015
+Fri Dec 11 17:01:27 MSK 2015
+Fri Dec 11 17:03:53 MSK 2015
+Fri Dec 11 17:06:51 MSK 2015
+Fri Dec 11 17:09:43 MSK 2015
+Fri Dec 11 17:12:39 MSK 2015
+Fri Dec 11 17:15:29 MSK 2015
+Fri Dec 11 17:18:20 MSK 2015
+Fri Dec 11 17:21:21 MSK 2015
+Fri Dec 11 17:24:33 MSK 2015
+Fri Dec 11 17:27:32 MSK 2015
+Fri Dec 11 17:30:47 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 17:31:36 MSK 2015
+Fri Dec 11 17:36:07 MSK 2015
+Fri Dec 11 17:39:29 MSK 2015
+Fri Dec 11 17:42:16 MSK 2015
+Fri Dec 11 17:44:47 MSK 2015
+Fri Dec 11 17:48:16 MSK 2015
+Fri Dec 11 17:51:20 MSK 2015
+Fri Dec 11 17:54:19 MSK 2015
+Fri Dec 11 17:57:13 MSK 2015
+Fri Dec 11 18:00:12 MSK 2015
+Fri Dec 11 18:03:33 MSK 2015
+Fri Dec 11 18:06:36 MSK 2015
+Fri Dec 11 18:09:54 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 18:11:22 MSK 2015
+Fri Dec 11 18:12:29 MSK 2015
+Fri Dec 11 18:17:46 MSK 2015
+Fri Dec 11 18:21:07 MSK 2015
+Fri Dec 11 18:24:26 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 18:25:08 MSK 2015
+Can't use an undefined value as a HASH reference at lib/App/HH/Api.pm line 23.
+Fri Dec 11 18:29:48 MSK 2015
+Fri Dec 11 18:29:58 MSK 2015
+Fri Dec 11 18:35:36 MSK 2015
+Fri Dec 11 18:38:36 MSK 2015
+Fri Dec 11 18:41:53 MSK 2015
+Can't use an undefined value as an ARRAY reference at ./script/script.pl line 60.
+Fri Dec 11 18:43:18 MSK 2015
+Fri Dec 11 18:44:55 MSK 2015
